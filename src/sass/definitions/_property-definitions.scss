@@ -7,11 +7,14 @@
   |--------------------------------------------------------------------------
   |
   */
-  --Color_Brand: #242224;
+  --Color_Brand-blue: #3394fc;
+  --Color_Brand-green: #3ed843;
 
   --Color_Anchor: #4373a3;
-  --Color_Body: #5b738b;
+  --Color_Body: #36383a;
   --Color_Border: #d0d5d8;
+
+  --Color_Gradient: linear-gradient( 90deg, rgb(16,130,252) 22%, rgb(62,216,67) 83%);
 
   /*
   |--------------------------------------------------------------------------
@@ -22,7 +25,7 @@
   /**
   * Font - Families
   */
-  --Font_Family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  --Font_Family: Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
   --Font_Family-body: var(--Font_Family);
 
   /*
@@ -33,13 +36,7 @@
   */
   --Grid_Constrained: 1600px;
   --Grid_Container: 1100px;
-  --Grid_Gutter: 15px;
-  /* This differentiates to the Grid_Gutter in that this is used for the inside of panels and
-   cards. On all old projects this has been styled by using the Grid_Gutter. This is wrong, it
-   seemed right because the insides were normally 30ish and the Grid_Gutter was 30 as well so i
-   just assumed a natural connection between the 2. This actually has been coincidental and it's
-   just that we normally use a Grid_Gutter of 15 we haven't come across is */
-  --Grid_Inside: 15px;
+  --Grid_Gutter: 16px;
 
   /*
   |--------------------------------------------------------------------------
@@ -47,8 +44,17 @@
   |--------------------------------------------------------------------------
   |
   */
-  --Global_Radius: 3px;
+  --Global_Radius: 4px;
   --Global_Transition: 0.2s;
   --Transition_EaseOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.075);
+
+  /*
+  |--------------------------------------------------------------------------
+  | Box-shadows
+  |--------------------------------------------------------------------------
+  |
+  */
+  --Box_Shadow-dark: 0px 3px 7px 0px rgba(0, 0, 0, 0.3);
+
 }
 /* stylelint-enable */

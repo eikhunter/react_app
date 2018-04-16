@@ -6,12 +6,17 @@
 */
 @mixin Button {
   display: inline-block;
-  padding: 0.25vr var(--Grid_Gutter);
+  padding: 12px 20px;
 
   background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
+  border: 1px solid #fff;
+  border-radius: 18px;
   color: #fff;
+
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
 
   transition: background-color var(--Global_Transition),
   border var(--Global_Transition),
@@ -21,12 +26,15 @@
 @mixin Button-primary {
   @include Button;
 
-  background-color: var(--Color_Brand);
   color: #fff;
 }
 
 @mixin Button-secondary {
   @include Button;
+
+  padding: 0;
+
+  border: none;
 }
 
 /*

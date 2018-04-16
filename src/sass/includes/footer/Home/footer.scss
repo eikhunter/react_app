@@ -1,0 +1,45 @@
+/*
+|--------------------------------------------------------------------------
+| Footer
+|--------------------------------------------------------------------------
+| @namespace: hm-
+|
+*/
+@import '../../../app.scss';
+
+.hm-Footer {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  left: 0;
+}
+
+.hm-Footer_Inner {
+  @include Grid_Container;
+}
+
+.hm-Footer_Body {
+  width: calc(10 / 12 * 100%);
+  margin: 0 auto;
+}
+
+.hm-Footer_Items {
+  align-items: center;
+  justify-content: center;
+
+  display: flex;
+  margin: 0 -16px;
+}
+
+.hm-Footer_Item {
+  margin: 0 var(--Grid_Gutter);
+}
+
+.hm-Footer_Link {
+  font-size: 8px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  color: var(--Color_Body);
+}
