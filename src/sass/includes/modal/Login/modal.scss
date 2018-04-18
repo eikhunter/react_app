@@ -7,6 +7,20 @@
 */
 @import '../../../app.scss';
 
+.lgn-Modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 19;
+
+  align-items: center;
+  justify-content: center;
+
+  display: flex;
+}
+
 .lgn-Modal_Title {
   margin-bottom: 20px;
 }
@@ -15,25 +29,14 @@
   @include Grid_Container;
 }
 
-.lgn-Modal_Overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+.lgn-Modal_Modal {
+  position: relative;
   z-index: 21;
 
-  align-items: center;
-  justify-content: center;
-
-  display: flex;
-
-  background-color: rgba(000, 000, 000, 0.2);
-}
-
-.lgn-Modal_Modal {
   width: calc(4 / 12 * 100%);
   margin: 0 auto;
+
+  transition: transform 0.3s;
 }
 
 .lgn-Modal_Body {

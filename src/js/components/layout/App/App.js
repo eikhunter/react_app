@@ -1,24 +1,24 @@
 import React, { Component } from 'react'
 import { Route, BrowserRouter } from "react-router-dom"
 
-import HomeHeader from './components/includes/header/Home/index'
-import HomeFooter from './components/includes/footer/Home/index'
-import Home from './components/layout/Home/index'
-import LoginModal from './components/includes/login/Modal/index'
+import HomeHeader from '../../includes/header/Home/index'
+import HomeFooter from '../../includes/footer/Home/index'
+import Home from '../../layout/Home/index'
+import LoginModal from '../../includes/login/Modal/index'
 
 class App extends Component {
   state = {
     loginClicked: false,
-    showLoginForm: false
+    showLoginForm: false,
   }
 
   loginClickedHandler = () => {
     this.setState({loginClicked: true})
   }
 
-  toggleLoginFormHandler = () => {
-   // this.setState({showFormLogin: true})
-    console.log(this.state.showLoginForm)
+  closeLoginModalHandler = () => {
+    this.setState({loginClicked: false})
+    console.log(this.state.loginClicked)
   }
 
   render() {
@@ -35,7 +35,7 @@ class App extends Component {
 
         <LoginModal
           show={this.state.loginClicked}
-          toggle={this.toggleLoginFormHandler}/>
+          modalClosed={this.closeLoginModalHandler}/>
       </div>
     )
   }

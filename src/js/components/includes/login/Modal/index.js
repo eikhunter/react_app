@@ -1,25 +1,46 @@
 import React from 'react'
 
+import Backdrop from '../../../../components/layout/Backdrop/index'
+import SignUpFormContainer from '../../form/SignUpFormContainer/index'
+
 import styles from '../../../../../sass/includes/modal/Login/modal.scss'
 
-const LoginModal = (props) => {
+class LoginModal extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      toggleSignUp: true
+    }
+  }
+
+  signUpToggleHandler = () => {
+    this.setState({toggleSignUp: !this.state.toggleSignUp})
+  }
+
+  render() {
     return (
-        <div className="lgn-Modal">
-          <div className="lgn-Modal_Overlay" style={{
-            transform: props.show ? 'translateY(0)' : 'translateY(-100vh)',
-            opacity: props.show ? '1' : '0'
-          }}>
-            <div className="lgn-Modal_Inner">
-              <div className="lgn-Modal_Modal">
-                <footer className="lgn-Modal_Footer">
-                  <p className="lgn-Modal_Text">Already have an account?<button className="lgn-Modal_Link"
-                  onClick={props.toggle}>{props.toggle ? 'Log in' : 'Sign up'}</button></p>
-                </footer>
-              </div>
-            </div>
-          </div>
+      <div className="lgn-Modal" style={{
+        display: this.props.show ? 'flex' : 'none'
+      }}>
+        <Backdrop
+          show={this.props.show}
+          clicked={this.props.modalClosed}/>
+
+        <div className="lgn-Modal_Modal" style={{
+          transform: this.props.show ? 'translateY(0)' : 'translateY(-100vh)'
+        }}>
+          <SignUpFormContainer
+            toggleSignUp={this.state.toggleSignUp}/>
+
+          <footer className="lgn-Modal_Footer">
+            <p className="lgn-Modal_Text">{this.state.toggleSignUp? 'Already have an account?' : 'Don\'t have an account?'}<button
+              className="lgn-Modal_Link"
+              onClick={this.signUpToggleHandler}>{this.state.toggleSignUp? 'Login' : 'Sign up'}</button></p>
+          </footer>
         </div>
+      </div>
     )
+  }
 }
 
 export default LoginModal
