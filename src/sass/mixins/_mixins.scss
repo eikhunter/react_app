@@ -32,9 +32,8 @@
 @mixin Button-secondary {
   @include Button;
 
-  padding: 0;
-
   border: none;
+  background-color: var(--Color_Brand-blue);
 }
 
 /*

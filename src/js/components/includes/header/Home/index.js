@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { NavLink } from "react-router-dom"
 
 import logo from '../../../../../assets/images/logo.png'
 import styles from '../../../../../sass/includes/header/Home/header.scss'
 
-const HomeHeader = () => {
+const HomeHeader = (props) => {
   return (
     <header className="hm-Header">
       <div className="hm-Header_Inner">
@@ -20,7 +20,9 @@ const HomeHeader = () => {
               </li>
 
               <li className="hm-Header_Item">
-                <NavLink to="/login" className="hm-Header_Link hm-Header_Link-secondary">Sign up / Login</NavLink>
+                <button
+                  onClick={props.clicked}
+                  className="hm-Header_Link hm-Header_Link-secondary">Sign up / Login</button>
               </li>
             </ul>
           </nav>

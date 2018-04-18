@@ -1,0 +1,81 @@
+/*
+|--------------------------------------------------------------------------
+| Modal
+|--------------------------------------------------------------------------
+| @namespace: lgn
+|
+*/
+@import '../../../app.scss';
+
+.lgn-Modal_Title {
+  margin-bottom: 20px;
+}
+
+.lgn-Modal_Inner {
+  @include Grid_Container;
+}
+
+.lgn-Modal_Overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 21;
+
+  align-items: center;
+  justify-content: center;
+
+  display: flex;
+
+  background-color: rgba(000, 000, 000, 0.2);
+}
+
+.lgn-Modal_Modal {
+  width: calc(4 / 12 * 100%);
+  margin: 0 auto;
+}
+
+.lgn-Modal_Body {
+  padding: 35px calc(var(--Grid_Gutter) * 2) 40px;
+
+  border-radius: var(--Global_Radius);
+  background-color: #fff;
+
+  box-shadow: var(--Box_Shadow-dark);
+}
+
+.lgn-Modal_Title {
+  @include Font_24-32;
+
+  text-align: center;
+}
+
+.lgn-Modal_Footer {
+  margin-top: 10px;
+  padding: 30px calc(var(--Grid_Gutter) * 2);
+
+  text-align: center;
+
+  border-radius: var(--Global_Radius);
+  background-color: #fff;
+
+  box-shadow: var(--Box_Shadow-dark);
+}
+
+.lgn-Modal_Text {
+  @include Font_14-20;
+}
+
+.lgn-Modal_Text-break {
+  margin-top: 15px;
+}
+
+.lgn-Modal_Link {
+  @include Font_14-20;
+
+  border: none;
+  background-color: transparent;
+
+  color: var(--Color_Brand-blue)
+}
