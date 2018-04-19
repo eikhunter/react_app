@@ -26,17 +26,19 @@ class LoginModal extends React.Component {
           show={this.props.show}
           clicked={this.props.modalClosed}/>
 
-        <div className="lgn-Modal_Modal" style={{
-          transform: this.props.show ? 'translateY(0)' : 'translateY(-100vh)'
-        }}>
-          <SignUpFormContainer
-            toggleSignUp={this.state.toggleSignUp}/>
+        <div className="lgn-Modal_Inner">
+          <div className="lgn-Modal_Modal" style={{
+            transform: this.props.show ? 'translateY(0)' : 'translateY(-100vh)'
+          }}>
+            <SignUpFormContainer
+              toggleSignUp={this.state.toggleSignUp}/>
 
-          <footer className="lgn-Modal_Footer">
-            <p className="lgn-Modal_Text">{this.state.toggleSignUp? 'Already have an account?' : 'Don\'t have an account?'}<button
-              className="lgn-Modal_Link"
-              onClick={this.signUpToggleHandler}>{this.state.toggleSignUp? 'Login' : 'Sign up'}</button></p>
-          </footer>
+            <footer className="lgn-Modal_Footer">
+              <p className="lgn-Modal_Text">{this.state.toggleSignUp? 'Already have an account?' : 'Don\'t have an account?'}<button
+                className="lgn-Modal_Link"
+                onClick={this.signUpToggleHandler}>{this.state.toggleSignUp? 'Login' : 'Sign up'}</button></p>
+            </footer>
+          </div>
         </div>
       </div>
     )

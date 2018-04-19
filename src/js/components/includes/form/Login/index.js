@@ -1,5 +1,9 @@
 import React from 'react'
 
+import FacebookIcon from '../../../../../assets/svg/social/facebook.svg'
+import TwitterIcon from '../../../../../assets/svg/social/twitter.svg'
+import GoogleIcon from '../../../../../assets/svg/social/google.svg'
+
 const LoginForm = () => {
   return (
     <div className="lgn-Modal_Body">
@@ -27,6 +31,28 @@ const LoginForm = () => {
           <button className="frm-Form_Submit">Login</button>
 
           <p className="lgn-Modal_Text lgn-Modal_Text-break">or</p>
+          <div className="lgn-Modal_Socials">
+            <ul className="lgn-Modal_SocialItems">
+              <li className="lgn-Modal_SocialItem lgn-Modal_SocialItem-facebook">
+                <a href="#" className="lgn-Modal_SocialLink">
+                  <FacebookIcon/>
+                  Facebook</a>
+              </li>
+
+              <li className="lgn-Modal_SocialItem lgn-Modal_SocialItem-twitter">
+                <a href="#" className="lgn-Modal_SocialLink">
+                  <TwitterIcon/>
+                  Twitter</a>
+              </li>
+
+              <li className="lgn-Modal_SocialItem lgn-Modal_SocialItem-google">
+                <a href="#" className="lgn-Modal_SocialLink">
+                  <GoogleIcon/>
+                  Google</a>
+              </li>
+            </ul>
+          </div>
+
           <a href="" className="lgn-Modal_Link">Forgot password?</a>
         </footer>
       </form>

@@ -10,8 +10,14 @@
 .hm-Footer {
   position: absolute;
   right: 0;
-  bottom: 10px;
+  bottom: 0;
   left: 0;
+
+  padding: 10px 0;
+
+  @include sm {
+    border-top: none;
+  }
 }
 
 .hm-Footer_Inner {
@@ -19,20 +25,40 @@
 }
 
 .hm-Footer_Body {
-  width: calc(10 / 12 * 100%);
-  margin: 0 auto;
+  @include sm {
+    width: calc(10 / 12 * 100%);
+    margin: 0 auto;
+  }
 }
 
 .hm-Footer_Items {
-  align-items: center;
-  justify-content: center;
+  text-align: center;
 
-  display: flex;
-  margin: 0 -16px;
+  @include sm {
+    align-items: center;
+    justify-content: center;
+
+    display: flex;
+    margin: 0 -16px;
+
+    text-align: left;
+  }
 }
 
 .hm-Footer_Item {
-  margin: 0 var(--Grid_Gutter);
+  &:nth-last-child(-n + 2) {
+    display: none;
+  }
+
+  @include sm {
+    margin: 0 var(--Grid_Gutter);
+
+    text-align: center;
+
+    &:nth-last-child(-n + 2) {
+      display: block;
+    }
+  }
 }
 
 .hm-Footer_Link {

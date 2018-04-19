@@ -1,5 +1,4 @@
 /* We use an order that is beneficial for a 'settings' file */
-/* stylelint-disable */
 :root {
   /*
   |--------------------------------------------------------------------------
@@ -9,6 +8,10 @@
   */
   --Color_Brand-blue: #3394fc;
   --Color_Brand-green: #3ed843;
+
+  --Color_Facebook: #235399;
+  --Color_Twitter: #1c9eef;
+  --Color_Google: #dc4d3f;
 
   --Color_Anchor: var(--Color_Brand-blue);
   --Color_Body: #36383a;
@@ -55,6 +58,4 @@
   |
   */
   --Box_Shadow-dark: 0px 3px 7px 0px rgba(0, 0, 0, 0.3);
-
 }
-/* stylelint-enable */

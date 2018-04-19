@@ -10,9 +10,11 @@
 .hm-Header {
   position: absolute;
   z-index: 11;
-  top: 20px;
+  top: 0;
   right: 0;
   left: 0;
+
+  padding: 20px 0;
 }
 
 .hm-Header_Inner {
@@ -27,14 +29,26 @@
 }
 
 .hm-Header_Items {
-  align-items: center;
+  @include sm {
+    align-items: center;
 
-  display: flex;
-  margin: 0 calc(var(--Grid_Gutter) * -2);
+    display: flex;
+    margin: 0 -10px;
+  }
+
+  @include md {
+    margin: 0 calc(var(--Grid_Gutter) * -2);
+  }
 }
 
 .hm-Header_Item {
-  margin: 0 calc(var(--Grid_Gutter) * 2);
+  @include sm {
+    margin: 0 10px;
+  }
+
+  @include md {
+    margin: 0 calc(var(--Grid_Gutter) * 2);
+  }
 }
 
 .hm-Header_Link {

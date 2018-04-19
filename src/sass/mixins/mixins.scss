@@ -1,5 +1,59 @@
 /*
 |--------------------------------------------------------------------------
+| Media queries
+|--------------------------------------------------------------------------
+|
+*/
+$screen-xs-min: 450px;
+
+$screen-sm-min: 768px;
+
+$screen-md-min: 900px;
+
+$screen-lg-min: 1200px;
+
+$screen-xlg-min: 1440px;
+
+$screen-xxlg-min: 1440px;
+
+@mixin xs {
+  @media (min-width: #{$screen-xs-min}) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media screen and (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+@mixin xlg {
+  @media (min-width: #{$screen-xlg-min}) {
+    @content;
+  }
+}
+
+@mixin xxlg {
+  @media (min-width: #{$screen-xxlg-min}) {
+    @content;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
 | Buttons
 |--------------------------------------------------------------------------
 |
@@ -10,13 +64,14 @@
 
   background-color: transparent;
   border: 1px solid #fff;
-  border-radius: 18px;
+  border-radius: 40px;
   color: #fff;
 
   font-size: 10px;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1px;
+  text-align: center;
 
   transition: background-color var(--Global_Transition),
   border var(--Global_Transition),
@@ -43,10 +98,20 @@
 |
 */
 @mixin Grid_Container {
-  max-width: calc(var(--Grid_Container) + (var(--Grid_Gutter) * 6));
+  max-width: calc(var(--Grid_Container) + (var(--Grid_Gutter) * 2));
   width: 100%;
   margin: 0 auto;
-  padding: 0 calc(var(--Grid_Gutter) * 3);
+  padding: 0 var(--Grid_Gutter);
+
+  @include sm {
+    max-width: calc(var(--Grid_Container) + (var(--Grid_Gutter) * 4));
+    padding: 0 calc(var(--Grid_Gutter) * 2);
+  }
+
+  @include md {
+    max-width: calc(var(--Grid_Container) + (var(--Grid_Gutter) * 6));
+    padding: 0 calc(var(--Grid_Gutter) * 3);
+  }
 }
 
 @mixin Grid_Row {
@@ -72,3 +137,4 @@
 
   list-style: none;
 }
+
