@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import HomeSearch from '../../includes/search/Home/index'
+import HomeFooter from '../../includes/footer/Home/index'
 
 import styles from '../../../../sass/layout/Home/home.scss'
 
@@ -14,6 +15,8 @@ const Home = () => {
           <HomeSearch/>
         </div>
       </div>
+
+      <HomeFooter/>
     </div>
   )
 }

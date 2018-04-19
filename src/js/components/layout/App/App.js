@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { Route, BrowserRouter } from "react-router-dom"
 
 import HomeHeader from '../../includes/header/Home/index'
-import HomeFooter from '../../includes/footer/Home/index'
 import Home from '../../layout/Home/index'
 import LoginModal from '../../includes/login/Modal/index'
+import Results from '../../layout/Results/index'
 
 class App extends Component {
   state = {
@@ -13,12 +13,11 @@ class App extends Component {
   }
 
   loginClickedHandler = () => {
-    this.setState({loginClicked: true})
+    this.setState({ loginClicked: true })
   }
 
   closeLoginModalHandler = () => {
-    this.setState({loginClicked: false})
-    console.log(this.state.loginClicked)
+    this.setState({ loginClicked: false })
   }
 
   render() {
@@ -29,7 +28,7 @@ class App extends Component {
             <HomeHeader
               clicked={this.loginClickedHandler}/>
             <Route exact path="/" component={Home}/>
-            <HomeFooter/>
+            <Route exact path="/results" component={Results}/>
           </div>
         </BrowserRouter>
 

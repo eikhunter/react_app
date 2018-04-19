@@ -21,6 +21,22 @@
   display: flex;
 }
 
+.lgn-Modal_Close {
+  position: absolute;
+  z-index: 20;
+  top: 20px;
+  right: 20px;
+
+  background-color: transparent;
+  border: none;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+  }
+}
+
 .lgn-Modal_Title {
   margin-bottom: 20px;
 }

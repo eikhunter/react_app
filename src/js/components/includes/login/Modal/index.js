@@ -3,6 +3,7 @@ import React from 'react'
 import Backdrop from '../../../../components/layout/Backdrop/index'
 import SignUpFormContainer from '../../form/SignUpFormContainer/index'
 
+import CloseIcon from '../../../../../assets/svg/close.svg'
 import styles from '../../../../../sass/includes/modal/Login/modal.scss'
 
 class LoginModal extends React.Component {
@@ -25,6 +26,11 @@ class LoginModal extends React.Component {
         <Backdrop
           show={this.props.show}
           clicked={this.props.modalClosed}/>
+
+        <button className="lgn-Modal_Close"
+                onClick={this.props.modalClosed}>
+          <CloseIcon/>
+        </button>
 
         <div className="lgn-Modal_Inner">
           <div className="lgn-Modal_Modal" style={{
