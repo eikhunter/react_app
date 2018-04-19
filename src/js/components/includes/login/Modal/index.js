@@ -10,7 +10,7 @@ class LoginModal extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      toggleSignUp: true
+      toggleSignUp: true,
     }
   }
 

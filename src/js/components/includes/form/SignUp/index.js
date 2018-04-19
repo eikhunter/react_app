@@ -1,44 +1,46 @@
-import React from "react"
-import axios from "axios"
+import React from 'react'
+import axios from 'axios'
 
-import FacebookIcon from "../../../../../assets/svg/social/facebook.svg"
-import TwitterIcon from "../../../../../assets/svg/social/twitter.svg"
-import GoogleIcon from "../../../../../assets/svg/social/google.svg"
+import FacebookIcon from '../../../../../assets/svg/social/facebook.svg'
+import TwitterIcon from '../../../../../assets/svg/social/twitter.svg'
+import GoogleIcon from '../../../../../assets/svg/social/google.svg'
 
 class SignUpForm extends React.Component {
   constructor(props) {
     super(props)
     this.state={
-      email: "",
-      password: "",
-      user_type: "tenant"
+      email: '',
+      password: '',
+      user_type: 'tenant'
     }
   }
 
-  emailHandler = (event) => {
+  emailInputHandler = (event) => {
     this.setState({ email: event.target.value })
   }
 
-  passwordHandler = (event) => {
+  passwordInputHandler = (event) => {
     this.setState({ password: event.target.value })
   }
 
-  userTypeHandler = (event) => {
+  userTypeInputHandler = (event) => {
     this.setState({ user_type: event.target.value })
   }
 
   submitHandler = (event) => {
     event.preventDefault()
 
-    const user = {
-      email: this.state.email,
-      password: this.state.password,
-      user_type: this.state.user_type
-    }
+    const user = "email=" + this.state.email + '&password=' + this.state.password + '&user_type=' + this.state.user_type
 
     console.log(user)
 
-    axios.post('http://10.200.110.116/api/0.01/register', {user})
+    const instance = axios.create({
+      baseURL: 'http://10.200.110.116/api/0.01/',
+      timeout: 1000,
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+    });
+
+    instance.post('/register', user)
       .then(res => {
         console.log(res)
         console.log(res.data)
@@ -59,7 +61,7 @@ class SignUpForm extends React.Component {
                          type="email"
                          name="email"
                          ref={email => this.email = email}
-                         onChange={this.emailHandler}/>
+                         onChange={this.emailInputHandler}/>
                 </label>
               </li>
 
@@ -70,14 +72,14 @@ class SignUpForm extends React.Component {
                     className="frm-Form_Input"
                     type="password"
                     name="password"
-                    onChange={this.passwordHandler}/>
+                    onChange={this.passwordInputHandler}/>
                 </label>
               </li>
 
               <li className="frm-Form_Item">
                 <label htmlFor="" className="frm-Form_Label">
                   What are you?
-                  <select defaultValue="tenant" onChange={this.userTypeHandler}
+                  <select defaultValue="tenant" onChange={this.userTypeInputHandler}
                           className="frm-Form_Select">
                     <option value="tenant">Tenant</option>
                     <option value="landlord">Landlord</option>

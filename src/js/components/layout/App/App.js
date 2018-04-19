@@ -10,10 +10,12 @@ class App extends Component {
   state = {
     loginClicked: false,
     showLoginForm: false,
+    isLoggedIn: false
   }
 
   loginClickedHandler = () => {
     this.setState({ loginClicked: true })
+    console.log(this.state.isLoggedIn)
   }
 
   closeLoginModalHandler = () => {
@@ -25,8 +27,11 @@ class App extends Component {
       <div className="lyt-Content">
         <BrowserRouter>
           <div>
-            <HomeHeader
-              clicked={this.loginClickedHandler}/>
+            {
+              this.state.isLoggedIn ? (
+                <div>Is logged in</div>
+              ): <HomeHeader clicked={this.loginClickedHandler}/>
+            }
             <Route exact path="/" component={Home}/>
             <Route exact path="/results" component={Results}/>
           </div>

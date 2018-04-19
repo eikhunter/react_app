@@ -1,4 +1,5 @@
 import React from 'react'
+import { Redirect } from 'react-router'
 import axios from 'axios'
 
 import FacebookIcon from '../../../../../assets/svg/social/facebook.svg'
@@ -12,44 +13,31 @@ class LoginForm extends React.Component {
     this.state = {
       email: '',
       password: '',
-      userLoggedIn: false
     }
   }
 
-  emailHandler = (event) => {
+  emailInputHandler = (event) => {
     this.setState({ email: event.target.value })
   }
 
-  passwordHandler = (event) => {
+  passwordInputHandler = (event) => {
     this.setState({ password: event.target.value })
   }
 
   loginSubmitHandler = (event) => {
     event.preventDefault()
 
-    const user = {
-      email: this.state.email,
-      password: this.state.password,
-    }
+    const user = "email=" + this.state.email + '&password=' + this.state.password
 
-    console.log(user)
+    const instance = axios.create({
+      baseURL: 'http://10.200.110.116/api/0.01/',
+      timeout: 1000,
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+    });
 
-    axios.post('http://10.200.110.116/api/0.01/login', {user})
-      .then(response => {
-        console.log(response.data)
-
-        if(response.data.code === 200) {
-          console.log('Login successful')
-          this.setState({ userLoggedIn: true })
-        } else if(response.data.code === 204) {
-          console.log('Username or password did not match')
-        } else {
-          console.log('Username does not exist')
-          alert('Username does not exist')
-        }
-      })
-      .catch(error => {
-        console.log(error)
+    instance.post('/login', user)
+      .then(res => {
+        document.cookie = res.data.success.token
       })
   }
 
@@ -67,14 +55,8 @@ class LoginForm extends React.Component {
                     className="frm-Form_Input"
                     type="email"
                     name="email"
-                    onChange={this.emailHandler}/>
+                    onChange={this.emailInputHandler}/>
                 </label>
-
-                <div className="frm-Form_Extras">
-                  <div className="frm-Form_Error">
-                    <p className="frm-Form_ErrorText">Y</p>
-                  </div>
-                </div>
               </li>
 
               <li className="frm-Form_Item">
@@ -84,7 +66,7 @@ class LoginForm extends React.Component {
                     className="frm-Form_Input"
                     type="password"
                     name="password"
-                    onChange={this.passwordHandler}/>
+                    onChange={this.passwordInputHandler}/>
                 </label>
               </li>
             </ul>
