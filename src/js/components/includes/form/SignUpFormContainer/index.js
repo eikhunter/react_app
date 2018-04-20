@@ -5,9 +5,11 @@ import LoginForm from '../Login/index'
 
 const SignUpFormContainer = (props) => {
   if (props.toggleSignUp) {
-    return <SignUpForm/>
+    return <SignUpForm
+      checkAuth={props.checkAuth}/>
   }
-  return <LoginForm/>
+  return <LoginForm
+    checkAuth={this.checkAuth}/>
 }
 
 export default SignUpFormContainer

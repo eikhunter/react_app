@@ -42,8 +42,16 @@ class SignUpForm extends React.Component {
 
     instance.post('/register', user)
       .then(res => {
-        console.log(res)
-        console.log(res.data)
+        let d = new Date
+        d.setDate(d.getDate() + 30)
+
+        let expires = "expires=" + d
+
+        document.cookie = "perchpeeksession" + "=" + res.data.success.token + expires + ";path=/"
+        this.props.setAuthStatus(true)
+      })
+      .catch(err => {
+        console.log(err, "There was an error")
       })
   }
 

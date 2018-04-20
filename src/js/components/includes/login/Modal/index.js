@@ -37,7 +37,8 @@ class LoginModal extends React.Component {
             transform: this.props.show ? 'translateY(0)' : 'translateY(-100vh)'
           }}>
             <SignUpFormContainer
-              toggleSignUp={this.state.toggleSignUp}/>
+              toggleSignUp={this.state.toggleSignUp}
+              checkAuth={this.props.checkAuth}/>
 
             <footer className="lgn-Modal_Footer">
               <p className="lgn-Modal_Text">{this.state.toggleSignUp? 'Already have an account?' : 'Don\'t have an account?'}<button

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, BrowserRouter } from "react-router-dom"
+import { Route, BrowserRouter, Redirect } from "react-router-dom"
 
 import HomeHeader from '../../includes/header/Home/index'
 import Home from '../../layout/Home/index'
@@ -7,10 +7,13 @@ import LoginModal from '../../includes/login/Modal/index'
 import Results from '../../layout/Results/index'
 
 class App extends Component {
-  state = {
-    loginClicked: false,
-    showLoginForm: false,
-    isLoggedIn: false
+  constructor(props) {
+    super(props)
+    this.state = {
+      loginClicked: false,
+      cookieToken: document.cookie,
+      isLoggedIn: false
+    }
   }
 
   loginClickedHandler = () => {
@@ -22,15 +25,25 @@ class App extends Component {
     this.setState({ loginClicked: false })
   }
 
+  setAuthStatus = () => {
+    this.setState({
+      isLoggedIn: true,
+    })
+    console.log(this.state.isLoggedIn)
+  }
+
+  logOut = () => {
+    document.cookie = 'perchpeeksession=' + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+  }
+
   render() {
     return (
       <div className="lyt-Content">
         <BrowserRouter>
           <div>
             {
-              this.state.isLoggedIn ? (
-                <div>Is logged in</div>
-              ): <HomeHeader clicked={this.loginClickedHandler}/>
+              (document.cookie ? (<button onClick={this.logOut}>Logout</button>
+              ): <HomeHeader clicked={this.loginClickedHandler}/>)
             }
             <Route exact path="/" component={Home}/>
             <Route exact path="/results" component={Results}/>
@@ -39,7 +52,8 @@ class App extends Component {
 
         <LoginModal
           show={this.state.loginClicked}
-          modalClosed={this.closeLoginModalHandler}/>
+          modalClosed={this.closeLoginModalHandler}
+          checkAuth={this.setAuthStatus}/>
       </div>
     )
   }
