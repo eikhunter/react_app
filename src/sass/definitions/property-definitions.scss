@@ -8,6 +8,7 @@
   */
   --Color_Brand-blue: #3394fc;
   --Color_Brand-green: #3ed843;
+  --Color_Red: #fe605f;
 
   --Color_Facebook: #235399;
   --Color_Twitter: #1c9eef;
@@ -15,7 +16,8 @@
 
   --Color_Anchor: var(--Color_Brand-blue);
   --Color_Body: #36383a;
-  --Color_Border: #d0d5d8;
+  --Color_Border: #d1d5d8;
+  --Color_GreyBackground: #f8f8f8;
 
   --Color_Gradient: linear-gradient( 90deg, rgb(16,130,252) 22%, rgb(62,216,67) 83%);
 
@@ -38,7 +40,7 @@
   |
   */
   --Grid_Constrained: 1600px;
-  --Grid_Container: 1100px;
+  --Grid_Container: 1600px;
   --Grid_Gutter: 16px;
 
   /*
@@ -58,4 +60,6 @@
   |
   */
   --Box_Shadow-dark: 0px 3px 7px 0px rgba(0, 0, 0, 0.3);
+  --Box_Shadow-light: 0px 3px 7px 0px rgba(0, 0, 0, 0.1);
+
 }

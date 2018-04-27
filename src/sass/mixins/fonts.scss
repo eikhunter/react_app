@@ -11,6 +11,11 @@
   line-height: 18px;
 }
 
+@mixin Font_12-18 {
+  font-size: 12px;
+  line-height: 18px;
+}
+
 @mixin Font_14-20 {
   font-size: 14px;
   line-height: 20px;
@@ -19,6 +24,17 @@
 @mixin Font_16-24 {
   font-size: 16px;
   line-height: 24px;
+}
+
+@mixin Font_18-28 {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+@mixin Font_22-28 {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 28px;
 }
 
 @mixin Font_24-32 {

@@ -40,7 +40,7 @@ class LoginForm extends React.Component {
         let d = new Date
         d.setDate(d.getDate() + 30)
 
-        let expires = "expires=" + d
+        let expires = ";expires=" + d
 
         document.cookie = "perchpeeksession" + "=" + res.data.success.token + expires + ";path=/"
         console.log('changing state')
@@ -55,7 +55,6 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="lgn-Modal_Body">
-        <button onClick={this.props.checkAuth}>button</button>
         <h3 className="lgn-Modal_Title">Login</h3>
         <form method="post" onSubmit={this.loginSubmitHandler} className="frm-Form">
           <div className="frm-Form_Body">

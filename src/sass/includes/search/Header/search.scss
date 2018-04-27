@@ -1,0 +1,68 @@
+/*
+|--------------------------------------------------------------------------
+| Search
+|--------------------------------------------------------------------------
+| @namespace: hd-
+|
+*/
+.hd-Search {
+  display: flex;
+  border-radius: 23px;
+
+  box-shadow: var(--Box_Shadow-light);
+}
+
+.hd-Search_Search {
+  position: relative;
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    right: 3px;
+    top: 12px;
+    bottom: 12px;
+
+    width: 1px;
+
+
+    background-color: var(--Color_Border);
+  }
+}
+
+.hd-Search_Input {
+  width: 100%;
+  padding: 12px var(--Grid_Gutter);
+
+  font-size: 14px;
+
+  border-radius: 23px 0 0 23px;
+  border-color: transparent;
+  border-right: none;
+
+  &::placeholder {
+    font-size: 14px;
+  }
+}
+
+.hd-Search_Select {
+  border: none;
+  background-color: transparent;
+
+  &::before {
+    content: '';
+  }
+}
+
+
+.hd-Search_Submit {
+  flex-shrink: 0;
+
+  width: 42px;
+  padding: 14px;
+
+  background-color: #fff;
+  border-radius: 0 23px 23px 0;
+  border-color: transparent;
+  border-left: none;
+}

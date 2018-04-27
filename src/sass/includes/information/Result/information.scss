@@ -1,0 +1,63 @@
+/*
+|--------------------------------------------------------------------------
+| Information
+|--------------------------------------------------------------------------
+| @namespace: rst-
+|
+*/
+@import "../../../app";
+
+.rst-Information {
+  flex-grow: 1;
+  flex-direction: column;
+
+  display: flex;
+  padding: 30px 36px 34px;
+}
+
+.rst-Information_Title {
+  @include Font_22-28;
+
+  display: inline-block;
+  margin-bottom: 12px;
+
+  color: var(--Color_Brand-blue);
+}
+
+.rst-Information_Location {
+  @include Font_16-24;
+
+  font-weight: 600;
+}
+
+.rst-Information_Text {
+  margin-top: 10px;
+
+  line-height: 24px;
+}
+
+.rst-Information_Footer {
+  align-items: center;
+  display: flex;
+  margin: auto -40px 0;
+}
+
+.rst-Information_Key {
+  align-items: center;
+
+  display: inline-flex;
+  margin: 0 40px;
+}
+
+.rst-Information_KeyText {
+  @include Font_22-28;
+
+  margin-right: calc(var(--Grid_Gutter) * 3);
+}
+
+.rst-Information_Icon {
+  svg {
+    height: 40px;
+    fill: var(--Color_Brand-blue);
+  }
+}

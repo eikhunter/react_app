@@ -1,0 +1,47 @@
+/*
+|--------------------------------------------------------------------------
+| Header
+|--------------------------------------------------------------------------
+| @namespace: rst
+|
+*/
+@import '../../../app';
+
+.rst-Header {
+  padding: 10px 0;
+
+  background-color: #fff;
+  border-bottom: 1px solid var(--Color_Border);
+}
+
+.rst-Header_Inner {
+  @include Grid_Container;
+}
+
+.rst-Header_Body {
+  justify-content: space-between;
+  align-items: center;
+
+  display: flex;
+}
+
+.rst-Header_Items {
+  align-items: center;
+
+  display: flex;
+  margin: 0 -8px;
+}
+
+.rst-Header_Item {
+  margin: 0 8px;
+}
+
+.rst-Header_Link {
+  @include Button-primary;
+
+  padding: 5px;
+
+  border: none;
+
+  color: var(--Color_Body);
+}

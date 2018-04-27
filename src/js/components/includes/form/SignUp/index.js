@@ -45,7 +45,7 @@ class SignUpForm extends React.Component {
         let d = new Date
         d.setDate(d.getDate() + 30)
 
-        let expires = "expires=" + d
+        let expires = ";expires=" + d
 
         document.cookie = "perchpeeksession" + "=" + res.data.success.token + expires + ";path=/"
         this.props.setAuthStatus(true)

@@ -15,7 +15,7 @@ class LoginModal extends React.Component {
   }
 
   signUpToggleHandler = () => {
-    this.setState({toggleSignUp: !this.state.toggleSignUp})
+    this.setState({toggleSignUp: false})
   }
 
   render() {
@@ -37,8 +37,7 @@ class LoginModal extends React.Component {
             transform: this.props.show ? 'translateY(0)' : 'translateY(-100vh)'
           }}>
             <SignUpFormContainer
-              toggleSignUp={this.state.toggleSignUp}
-              checkAuth={this.props.checkAuth}/>
+              toggleSignUp={this.state.toggleSignUp}/>
 
             <footer className="lgn-Modal_Footer">
               <p className="lgn-Modal_Text">{this.state.toggleSignUp? 'Already have an account?' : 'Don\'t have an account?'}<button

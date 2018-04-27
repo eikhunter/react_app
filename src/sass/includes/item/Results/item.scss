@@ -1,0 +1,41 @@
+/*
+|--------------------------------------------------------------------------
+| Item
+|--------------------------------------------------------------------------
+| @namespace: rst-
+|
+*/
+.rst-Item {
+  display: flex;
+  width: 100%;
+
+  background-color: #fff;
+  box-shadow: var(--Box_Shadow-light);
+
+  border-radius: var(--Global_Radius);
+}
+
+.rst-Item_Images {
+  width: calc(2.5 / 7 * 100%);
+}
+
+.rst-Item_Body {
+  display: flex;
+  width: calc(3.5 / 7 * 100%);
+
+  border-right: 1px solid var(--Color_Border);
+  border-left: 1px solid var(--Color_Border);
+}
+
+.rst-Item_Tabs {
+  flex-direction: column;
+
+  display: flex;
+}
+
+.rst-Item_Meta {
+  flex: 1;
+
+  display: flex;
+  width: calc(1 / 7 * 100%);
+}

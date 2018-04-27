@@ -60,7 +60,7 @@ $screen-xxlg-min: 1440px;
 */
 @mixin Button {
   display: inline-block;
-  padding: 12px 20px;
+  padding: 14px 20px;
 
   background-color: transparent;
   border: 1px solid #fff;
@@ -87,8 +87,10 @@ $screen-xxlg-min: 1440px;
 @mixin Button-secondary {
   @include Button;
 
-  border: none;
-  background-color: var(--Color_Brand-blue);
+  background-color: transparent;
+  border-color: var(--Color_Brand-blue);
+
+  color: var(--Color_Brand-blue);
 }
 
 /*

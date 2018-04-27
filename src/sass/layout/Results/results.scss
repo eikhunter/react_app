@@ -1,0 +1,37 @@
+/*
+|--------------------------------------------------------------------------
+| Results
+|--------------------------------------------------------------------------
+| @namespace: lyt-
+|
+*/
+@import '../../app';
+
+.lyt-Results {
+  background-color: var(--Color_GreyBackground);
+}
+
+.lyt-Results_Inner {
+  @include Grid_Container;
+}
+
+.lyt-Results_Body {
+  display: flex;
+
+  margin: 0 -16px;
+}
+
+.lyt-Results_Main {
+  flex-direction: column;
+
+  display: flex;
+  height: calc(100vh - 72px);
+
+  width: calc(9 / 12 * 100% - var(--Grid_Gutter) * 2);
+  margin: 0 var(--Grid_Gutter);
+}
+
+.lyt-Results_Aside {
+  width: calc(3 / 12 * 100% - var(--Grid_Gutter) * 2);
+  margin: 0 var(--Grid_Gutter);
+}

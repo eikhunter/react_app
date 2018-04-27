@@ -1,0 +1,40 @@
+/*
+|--------------------------------------------------------------------------
+| Tabs
+|--------------------------------------------------------------------------
+| @namespace: rst-
+|
+*/
+@import "../../../app";
+
+.rst-Tabs {
+  border-bottom: 1px solid var(--Color_Border);
+}
+
+.rst-Tabs_Tabs {
+  display: flex;
+}
+
+.rst-Tabs_Tab {
+  width: calc(1 / 2 * 100%);
+  padding: 14px var(--Grid_Gutter);
+
+  border: none;
+  background-color: #fff;
+
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.rst-Tabs_Tab-active {
+  background: var(--Color_Gradient);
+
+  color: #fff;
+}
+
+.rst-Tabs_Content {
+  flex-grow: 1;
+
+  display: flex;
+}

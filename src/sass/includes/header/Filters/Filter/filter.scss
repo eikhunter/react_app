@@ -1,0 +1,25 @@
+/*
+|--------------------------------------------------------------------------
+| Filter
+|--------------------------------------------------------------------------
+| @namespace: flt-
+|
+*/
+@import "../../../../app";
+
+.flt-Filter_Button {
+  @include Button-secondary;
+
+  align-items: center;
+
+  display: flex;
+}
+
+.flt-Filter_Icon {
+  margin-left: 10px;
+
+  svg {
+    width: 12px;
+    fill: var(--Color_Brand-blue);
+  }
+}

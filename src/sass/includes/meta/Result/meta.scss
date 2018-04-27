@@ -1,0 +1,98 @@
+/*
+|--------------------------------------------------------------------------
+| Meta
+|--------------------------------------------------------------------------
+| @namespace: rst-
+|
+*/
+@import '../../../app';
+
+.rst-Meta {
+  align-items: center;
+  flex-direction: column;
+
+  display: flex;
+  width: 100%;
+
+  text-align: center;
+}
+
+.rst-Meta_Body {
+  width: 100%;
+  padding: 35px 20px 20px;
+}
+
+.rst-Meta_ImageContainer {
+  width: 80px;
+  height: 80px;
+
+  margin: 0 auto;
+}
+
+.rst-Meta_Image {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  border-radius: 40px;
+
+  background-color: #000;
+}
+
+.rst-Meta_Name {
+  margin-top: 30px;
+}
+
+.rst-Meta_Footer {
+  width: 100%;
+  margin-top: auto;
+  padding: 10px 20px 35px;
+
+  border-top: 1px solid var(--Color_Border);
+}
+
+.rst-Meta_Link {
+  @include Font_12-18;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.rst-Action_Actions {
+  justify-content: center;
+
+  display: flex;
+  margin: 20px -8px;
+}
+
+.rst-Action_Action {
+  justify-content: center;
+  align-items: center;
+
+  display: flex;
+  width: 50px;
+  height: 50px;
+  margin: 0 8px;
+
+  border-radius: 25px;
+  border: none;
+
+  svg {
+    width: 24px;
+    fill: #fff;
+  }
+}
+
+.rst-Action_Action-like {
+  background-color: var(--Color_Brand-green);
+
+  svg {
+    width: 28px;
+    margin-top: 2px;
+    fill: #fff;
+  }
+}
+
+.rst-Action_Action-dislike {
+  background-color: var(--Color_Red);
+}
