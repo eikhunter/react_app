@@ -38,9 +38,9 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <Route exact path="/"
-                   component={Home}
-                   clicked={this.loginClickedHandler}/>
-            <Route exact path="/results" component={Results}/>
+                   render={(props) => <Home clicked={this.loginClickedHandler}/>}/>
+            <Route exact path="/results"
+                   render={(props) => <Results clicked={this.loginClickedHandler}/>}/>
             <Route exact path="/property-detail" component={Property}/>
           </div>
         </BrowserRouter>

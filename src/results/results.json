@@ -1,0 +1,58 @@
+{
+  "results": [
+    {
+      "id": 1,
+      "title": "2 bedroom apartment to rent",
+      "location": "30 South Colonnade London E14 5EZ",
+      "description": "The building offers a communal lifestyle which consists of a large lounge area with dining room, working space, TV lounge, gym, stylish meeting rooms, free table tennis, free WIFI and a spacious communal roof terrace. Local transport includes Canning Town DLR and Jubilee Line (0.1 miles). Argo Apartments is managed by Grainger plc, one of the UK's leading professional landlords with over 100 years experience.",
+      "price": "1,800",
+      "beds": 2,
+      "bathrooms": 1,
+      "landlord": "Hamptons International Lettings",
+      "images": ["image1", "image2"],
+      "lat": 51.5026792,
+      "lng": -0.0193058
+    },
+    {
+      "id": 2,
+      "title": "2 bedroom flat to rent",
+      "location": "Textile Building, Chatham Place, Hackney, London, E9",
+      "description": "SHORT LET - Forming part of the new eagerly awaited Textile Building in Hackney Central E8, this stunning two double bedroom property has been finished to the highest standard, featuring two modern fitted bathrooms (one en-suite), two equal double bedrooms, spacious open plan reception with brand new integrated kitchen, exposed brickwork and communal underground bike storage.",
+      "price": "2,400",
+      "beds": 2,
+      "bathrooms": 1,
+      "landlord": "Stirling Ackroyd, Hackney",
+      "images": ["image1", "image2"],
+      "lat": 51.5461029,
+      "lng": -0.0532193
+    },
+    {
+      "id": 3,
+      "title": "3 bedroom apartment to rent",
+      "location": "Sixth Floor Tower Building 11 York Road London SE1 7NX",
+      "description": "A fantastic three bedroom apartment set in this popular development close to Vauxhall and Stockwell tube stations. The apartment is neutrally decorated throughout and is available either furnished or unfurnished. Residents will enjoy the plethora of shops, bars and restaurants and leisure activities in this popular part of London as well as the excellent commuter links towards Central London.",
+      "price": "2,050",
+      "beds": 3,
+      "bathrooms": 2,
+      "landlord": "Regent Letting and Property Management",
+      "images": ["image1", "image2"],
+      "lat": 51.5039072,
+      "lng": -0.1168417
+    }
+  ],
+  "newResults" : [
+    {
+      "id": 4,
+      "title": "2 bedroom flat to rent",
+      "location": "Conway Street, Fitzrovia, W1T",
+      "description": "Complete is delighted to market this newly renovated period property situated on the corner of Fitzroy Square in the heart of Fitzrovia, W1. The property is located on the ground floor and comes with 2 double bedrooms, shower room, open plan living and kitchen area. The kitchen is fully fitted with Siemens appliances and Duravit fittings in the bathroom. This apartment has high ceiling and retains its original period features. Located on the corner of this garden square this development was built in the 18th Century and benefits from being in the heart of vibrant London whilst also being a quiet residential area.",
+      "price": "1,500",
+      "beds": 2,
+      "bathrooms": 1,
+      "landlord": "Barnard Marcus Lettings",
+      "images": ["image1", "image2"],
+      "lat": 51.5230701,
+      "lng": -0.1430136
+    }
+  ]
+}

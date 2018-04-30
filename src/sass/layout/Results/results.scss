@@ -18,14 +18,14 @@
 .lyt-Results_Body {
   display: flex;
 
-  margin: 0 -16px;
+  margin: 32px -16px;
 }
 
 .lyt-Results_Main {
   flex-direction: column;
 
   display: flex;
-  height: calc(100vh - 72px);
+  height: calc(100vh - 168px);
 
   width: calc(9 / 12 * 100% - var(--Grid_Gutter) * 2);
   margin: 0 var(--Grid_Gutter);

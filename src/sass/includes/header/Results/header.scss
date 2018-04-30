@@ -37,11 +37,16 @@
 }
 
 .rst-Header_Link {
-  @include Button-primary;
-
   padding: 5px;
 
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
   border: none;
+
+  background-color: transparent;
 
   color: var(--Color_Body);
 }

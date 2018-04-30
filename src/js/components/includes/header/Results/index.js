@@ -34,7 +34,7 @@ const ResultsHeader = (props) => {
                 <a href="#" className="rst-Header_Link">List your property</a>
               </li>
               <li className="rst-Header_Item">
-                <a href="#" className="rst-Header_Link">Sign up / Login</a>
+                <button onClick={props.clicked} className="rst-Header_Link">Sign up / Login</button>
               </li>
             </ul>
           </nav>

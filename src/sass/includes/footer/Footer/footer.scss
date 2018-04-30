@@ -1,0 +1,84 @@
+/*
+|--------------------------------------------------------------------------
+| Footer
+|--------------------------------------------------------------------------
+| @namespace: ft-
+|
+*/
+@import '../../../app.scss';
+
+.ft-Footer {
+  padding: 6px 0;
+
+  background-color: #fff;
+
+  @include sm {
+    border-top: none;
+  }
+}
+
+.ft-Footer_Inner {
+  @include Grid_Container;
+}
+
+.ft-Footer_Body {
+  justify-content: space-between;
+  align-items: center;
+
+  display: flex;
+}
+
+.ft-Footer_Items {
+  align-items: center;
+
+  text-align: center;
+
+  @include sm {
+    align-items: center;
+    justify-content: center;
+
+    display: flex;
+    margin: 0 -16px;
+
+    text-align: left;
+  }
+}
+
+.ft-Footer_Item {
+  align-items: center;
+
+  display: flex;
+  margin: 0 var(--Grid_Gutter);
+
+  text-align: center;
+}
+
+.ft-Footer_Link {
+  font-size: 8px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  color: var(--Color_Body);
+}
+
+.ft-Footer_Socials {
+  align-items: center;
+
+  display: flex;
+  margin: 0 -5px;
+}
+
+.ft-Footer_Social {
+  flex: 1;
+
+  margin: 0 5px;
+}
+
+.ft-Footer_SocialLink {
+  svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
+}

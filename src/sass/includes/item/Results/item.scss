@@ -5,6 +5,8 @@
 | @namespace: rst-
 |
 */
+@import "../../../app";
+
 .rst-Item {
   display: flex;
   width: 100%;
@@ -27,15 +29,265 @@
   border-left: 1px solid var(--Color_Border);
 }
 
-.rst-Item_Tabs {
-  flex-direction: column;
-
-  display: flex;
-}
-
 .rst-Item_Meta {
   flex: 1;
 
   display: flex;
   width: calc(1 / 7 * 100%);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Information
+|--------------------------------------------------------------------------
+| @namespace: rst-
+|
+*/
+.rst-Information {
+  flex-grow: 1;
+  flex-direction: column;
+
+  display: flex;
+  padding: 30px 36px 34px;
+}
+
+.rst-Information_Title {
+  @include Font_22-28;
+
+  display: inline-block;
+  margin-bottom: 12px;
+
+  color: var(--Color_Brand-blue);
+}
+
+.rst-Information_Location {
+  @include Font_16-24;
+
+  font-weight: 600;
+}
+
+.rst-Information_Text {
+  margin-top: 10px;
+
+  line-height: 24px;
+}
+
+.rst-Information_Footer {
+  align-items: center;
+  display: flex;
+  margin: auto -40px 0;
+
+  border-top: 20px solid transparent;
+}
+
+.rst-Information_Key {
+  align-items: center;
+
+  display: inline-flex;
+  margin: 0 40px;
+}
+
+.rst-Information_KeyText {
+  @include Font_22-28;
+
+  margin-right: calc(var(--Grid_Gutter) * 3);
+}
+
+.rst-Information_Icon {
+  svg {
+    height: 40px;
+    fill: var(--Color_Brand-blue);
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Tabs
+|--------------------------------------------------------------------------
+| @namespace: rst-
+|
+*/
+.rst-Tabs {
+  flex-direction: column;
+
+  display: flex;
+  width: 100%;
+}
+
+.rst-Tabs_Tabs {
+  display: flex;
+
+  border-bottom: 1px solid var(--Color_Border);
+}
+
+.rst-Tabs_Tab {
+  width: calc(1 / 2 * 100%);
+  padding: 14px var(--Grid_Gutter);
+
+  border: none;
+  background-color: #fff;
+
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+
+  cursor: pointer;
+}
+
+.react-tabs__tab--selected {
+  background: var(--Color_Gradient);
+
+  color: #fff;
+}
+
+.rst-Tabs_Content {
+  flex-grow: 1;
+
+  display: none;
+  width: 100%;
+}
+
+.react-tabs__tab-panel--selected {
+  display: flex;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Meta
+|--------------------------------------------------------------------------
+| @namespace: rst-
+|
+*/
+.rst-Meta {
+  align-items: center;
+  flex-direction: column;
+
+  display: flex;
+  width: 100%;
+
+  text-align: center;
+}
+
+.rst-Meta_Body {
+  width: 100%;
+  padding: 35px 20px 20px;
+}
+
+.rst-Meta_ImageContainer {
+  width: 80px;
+  height: 80px;
+
+  margin: 0 auto;
+}
+
+.rst-Meta_Image {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  border-radius: 40px;
+
+  background-color: #000;
+}
+
+.rst-Meta_Name {
+  margin-top: 30px;
+}
+
+.rst-Meta_Footer {
+  width: 100%;
+  margin-top: auto;
+  padding: 10px 20px 35px;
+
+  border-top: 1px solid var(--Color_Border);
+}
+
+.rst-Meta_Link {
+  @include Font_12-18;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.rst-Action_Actions {
+  justify-content: center;
+
+  display: flex;
+  margin: 20px -8px;
+}
+
+.rst-Action_Action {
+  justify-content: center;
+  align-items: center;
+
+  display: flex;
+  width: 50px;
+  height: 50px;
+  margin: 0 8px;
+
+  border-radius: 25px;
+  border: none;
+
+  svg {
+    width: 24px;
+    fill: #fff;
+  }
+}
+
+.rst-Action_Action-like {
+  background-color: var(--Color_Brand-green);
+
+  svg {
+    width: 28px;
+    margin-top: 2px;
+    fill: #fff;
+  }
+}
+
+.rst-Action_Action-dislike {
+  background-color: var(--Color_Red);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Carousel
+|--------------------------------------------------------------------------
+| @namespace: rst-
+|
+*/
+.rst-Carousel {
+  display: flex;
+  height: 100%;
+
+  .slider-frame {
+    display: flex !important;
+    height: 100% !important;
+
+    .slider-list {
+      height: 100% !important;
+    }
+
+    .slider-slide {
+      height: 100% !important;
+    }
+  }
+}
+
+.rst-Carousel_Items {
+  display: flex;
+  height: 100%;
+}
+
+.rst-Carousel_Item {
+  display: flex;
+  height: 100%;
+}
+
+.rst-Carousel_Image {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
 }

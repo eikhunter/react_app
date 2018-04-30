@@ -15,7 +15,7 @@ class LoginModal extends React.Component {
   }
 
   signUpToggleHandler = () => {
-    this.setState({toggleSignUp: false})
+    this.setState({toggleSignUp: !this.state.toggleSignUp})
   }
 
   render() {
@@ -40,9 +40,9 @@ class LoginModal extends React.Component {
               toggleSignUp={this.state.toggleSignUp}/>
 
             <footer className="lgn-Modal_Footer">
-              <p className="lgn-Modal_Text">{this.state.toggleSignUp? 'Already have an account?' : 'Don\'t have an account?'}<button
+              <p className="lgn-Modal_Text">{this.state.toggleSignUp ? 'Already have an account?' : 'Don\'t have an account?'}<button
                 className="lgn-Modal_Link"
-                onClick={this.signUpToggleHandler}>{this.state.toggleSignUp? 'Login' : 'Sign up'}</button></p>
+                onClick={this.signUpToggleHandler}>{this.state.toggleSignUp ? 'Login' : 'Sign up'}</button></p>
             </footer>
           </div>
         </div>

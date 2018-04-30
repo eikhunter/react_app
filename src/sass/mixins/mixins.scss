@@ -81,8 +81,18 @@ $screen-xxlg-min: 1440px;
 @mixin Button-primary {
   @include Button;
 
+  background-color: var(--Color_Brand-blue);
+  border-color: var(--Color_Brand-blue);
+
   color: #fff;
 }
+
+@mixin Button-ghost {
+  @include Button;
+
+  color: #fff;
+}
+
 
 @mixin Button-secondary {
   @include Button;
