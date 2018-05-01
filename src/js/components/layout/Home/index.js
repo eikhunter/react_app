@@ -12,7 +12,7 @@ const Home = (props) => {
       <span className="lyt-Home_Shape lyt-Home_Shape-blue"></span>
       <span className="lyt-Home_Shape lyt-Home_Shape-green"></span>
       <div className="lyt-Home_Inner">
-        <div className="lyt-Home_Body" onClick={props.clicked}>
+        <div className="lyt-Home_Body">
           {
             (document.cookie && props.isLoggedIn ? (<button onClick={this.logOut}>Logout</button>
             ): <HomeHeader clicked={props.clicked}/>)

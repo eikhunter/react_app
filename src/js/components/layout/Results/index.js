@@ -23,7 +23,7 @@ class Results extends React.Component{
     const results = this.state.results
     results.results.splice(propertyIndex, 1)
     this.setState({results: results})
-    console.log(this.state.results)
+    console.log(results)
   }
 
   removePropertyHandler = () => {
@@ -31,8 +31,6 @@ class Results extends React.Component{
   }
 
   render() {
-    console.log(this.state.results)
-
     return (
       <div className="lyt-Results">
         <ResultsHeader
