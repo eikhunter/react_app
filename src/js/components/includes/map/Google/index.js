@@ -11,17 +11,9 @@ class GoogleMap extends React.Component {
     }
   }
 
-  _onChange = ({center, zoom}) => {
-    this.setState({
-      center: center,
-      zoom: zoom,
-    });
-  }
-
   render() {
     return (
       <GoogleMapReact
-        onChange={this._onChange}
         center={this.state.center}
         zoom={this.state.zoom}>
         <div className="place" lat={60.955413} lng={30.337844}>MyPlace</div>

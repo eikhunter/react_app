@@ -1,43 +1,34 @@
 import React from 'react'
-import resultsData from '../../../../../results/results.json'
 
 import ResultsItem from '../../item/Results/index'
 
 import '../../../../../sass/includes/list/Results/list.scss'
 
-class ResultsLists extends React.Component {
-  constructor(props) {
-    super(props)
+const ResultsLists = (props) => {
+  const results = props.data.results.map((result, index) =>
+    <li className="rst-List_Item">
+      <ResultsItem
+        key={result.id}
+        title={result.title}
+        location={result.location}
+        description={result.description}
+        beds={result.beds}
+        bathrooms={result.bathrooms}
+        landlord={result.landlord}
+        lat={result.lat}
+        lng={result.lng}
+        add={props.add(index)}
+        remove={props.remove(index)}/>
+    </li>
+  )
 
-    this.state = {
-      results: resultsData
-    }
-  }
-
-  render() {
-    const results = this.state.results.results.map((result) =>
-      <li className="rst-List_Item">
-        <ResultsItem
-          key={result.id}
-          title={result.title}
-          location={result.location}
-          description={result.description}
-          beds={result.beds}
-          bathrooms={result.bathrooms}
-          landlord={result.landlord}
-          lat={result.lat}
-          lng={result.lng}/>
-      </li>
-    );
-
-    return (
-      <div className="rst-List">
-        <ul className="rst-List_Items">
-          {results}
-        </ul>
-      </div>
-    )
-  }
+  return (
+    <div className="rst-List">
+      <ul className="rst-List_Items">
+        {results}
+      </ul>
+    </div>
+  )
 }
 
 export default ResultsLists

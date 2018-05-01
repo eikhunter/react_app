@@ -1,0 +1,66 @@
+/*
+|--------------------------------------------------------------------------
+| Sidebar
+|--------------------------------------------------------------------------
+| @namespace: rst-
+|
+*/
+@import "../../../app";
+
+.rst-SideBar {
+  width: 100%;
+
+  background-color: #fff;
+  border-radius: var(--Global_Radius);
+  box-shadow: var(--Box_Shadow-light);
+
+  overflow: hidden;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Tabs
+|--------------------------------------------------------------------------
+|
+*/
+.rst-SideBar_Tabs {
+  display: flex;
+  width: 100%;
+
+  background-color: var(--Color_Red);
+}
+
+.rst-SideBar_Tabs {
+  display: flex;
+
+  border-bottom: 1px solid var(--Color_Border);
+}
+
+.rst-SideBar_Tab {
+  width: calc(1 / 2 * 100%);
+  padding: 14px var(--Grid_Gutter);
+
+  border: none;
+  background-color: #fff;
+
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+
+  cursor: pointer;
+  transition: background-color var(--Global_Transition), color var(--Global_Transition);
+
+  &:last-child {
+    background-color: transparent;
+
+    color: #fff;
+  }
+}
+
+.rst-SideBar_Content {
+  flex-grow: 1;
+
+  display: none;
+  width: 100%;
+}

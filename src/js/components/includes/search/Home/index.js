@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from "react-router-dom"
 
 import SearchIcon from '../../../../../assets/svg/search.svg'
 import '../../../../../sass/includes/search/Home/search.scss'
@@ -11,9 +12,9 @@ const HomeSearch = () => {
       <form action="">
         <div className="hm-Search_Container">
           <input className="hm-Search_Input" type="text" placeholder="e.g. London, SW9, SW9 9JF"/>
-          <button className="hm-Search_Submit">
+          <NavLink to="/results" className="hm-Search_Submit">
             <SearchIcon/>
-          </button>
+          </NavLink>
         </div>
       </form>
     </div>

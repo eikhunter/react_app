@@ -19,7 +19,11 @@
 }
 
 .rst-Item_Images {
-  width: calc(2 / 7 * 100%);
+  width: calc(2.3 / 7 * 100%);
+
+  @include xlg {
+    width: calc(2.5 / 7 * 100%);
+  }
 }
 
 .rst-Item_Body {
@@ -27,14 +31,17 @@
   width: calc(3.5 / 7 * 100%);
 
   border-right: 1px solid var(--Color_Border);
-  border-left: 1px solid var(--Color_Border);
 }
 
 .rst-Item_Meta {
   flex: 1;
 
   display: flex;
-  width: calc(1.5 / 7 * 100%);
+  width: calc(1.2 / 7 * 100%);
+
+  @include xlg {
+    width: calc(1 / 7 * 100%);
+  }
 }
 
 /*
@@ -50,20 +57,29 @@
 
   display: flex;
   padding: 20px;
+
+  @include xlg {
+    padding: 32px;
+  }
 }
 
 .rst-Information_Title {
-  @include Font_22-28;
+  @include Font_24-32;
 
   display: inline-block;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 
   color: var(--Color_Brand-blue);
+
+  @include xlg {
+    margin-bottom: 12px;
+  }
 }
 
 .rst-Information_Location {
-  @include Font_16-24;
+  @include Font_12-18;
 
+  text-transform: uppercase;
   font-weight: 600;
 }
 
@@ -89,15 +105,27 @@
 }
 
 .rst-Information_KeyText {
-  @include Font_22-28;
+  margin-right: calc(var(--Grid_Gutter) * 2);
 
-  margin-right: calc(var(--Grid_Gutter) * 3);
+  font-size: 18px;
+  line-height: 24px;
+
+  @include xlg {
+    margin-right: calc(var(--Grid_Gutter) * 3);
+
+    font-size: 22px;
+    line-height: 28px;
+  }
 }
 
 .rst-Information_Icon {
   svg {
-    height: 40px;
+    height: 26px;
     fill: var(--Color_Brand-blue);
+
+    @include xlg {
+      height: 40px;
+    }
   }
 }
 
@@ -113,6 +141,20 @@
 
   display: flex;
   width: 100%;
+
+  .react-tabs__tab--selected {
+    background: var(--Color_Gradient);
+
+    color: #fff;
+
+    &:hover {
+      background: var(--Color_Gradient);
+    }
+  }
+
+  .react-tabs__tab-panel--selected {
+    display: flex;
+  }
 }
 
 .rst-Tabs_Tabs {
@@ -134,12 +176,12 @@
   text-align: center;
 
   cursor: pointer;
-}
+  transition: background-color var(--Global_Transition), color var(--Global_Transition);
 
-.react-tabs__tab--selected {
-  background: var(--Color_Gradient);
-
-  color: #fff;
+  &:hover {
+    background-color: var(--Color_Brand-blue);
+    color: #fff;
+  }
 }
 
 .rst-Tabs_Content {
@@ -147,10 +189,6 @@
 
   display: none;
   width: 100%;
-}
-
-.react-tabs__tab-panel--selected {
-  display: flex;
 }
 
 /*
@@ -172,14 +210,26 @@
 
 .rst-Meta_Body {
   width: 100%;
-  padding: 20px var(--Grid_Gutter);
+
+  @include lg {
+    padding: 20px;
+  }
+
+  @include xlg {
+    padding: 30px 20px;
+  }
 }
 
 .rst-Meta_ImageContainer {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
 
   margin: 0 auto;
+
+  @include xlg {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 .rst-Meta_Image {
@@ -194,14 +244,12 @@
 
 .rst-Meta_Name {
   margin-top: 20px;
-
-  font-size: 14px;
 }
 
 .rst-Meta_Footer {
   width: 100%;
   margin-top: auto;
-  padding: 10px var(--Grid_Gutter);
+  padding: 20px;
 
   border-top: 1px solid var(--Color_Border);
 }
@@ -209,15 +257,39 @@
 .rst-Meta_Link {
   @include Font_12-18;
 
+  position: relative;
+
   text-transform: uppercase;
   letter-spacing: 1px;
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: -5px;
+
+    height: 2px;
+
+    background-color: var(--Color_Brand-blue);
+
+    transition: opacity var(--Global_Transition);
+    opacity: 0;
+  }
+
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
+  }
 }
 
 .rst-Action_Actions {
   justify-content: center;
 
   display: flex;
-  margin: 10px -8px;
+  margin: 0 -8px 10px;
 }
 
 .rst-Action_Action {
@@ -230,16 +302,35 @@
   margin: 0 8px;
 
   border-radius: 25px;
-  border: none;
+
+  transition: background-color var(--Global_Transition);
+
+  &:hover {
+    background-color: transparent;
+
+    svg {
+      fill: var(--Color_Red);
+    }
+  }
 
   svg {
     width: 18px;
     fill: #fff;
+    transition: fill var(--Global_Transition);
   }
 }
 
 .rst-Action_Action-like {
+  border: 1px solid var(--Color_Brand-green);
   background-color: var(--Color_Brand-green);
+
+  &:hover {
+    background-color: transparent;
+
+    svg {
+      fill: var(--Color_Brand-green);
+    }
+  }
 
   svg {
     margin-top: 2px;
@@ -249,6 +340,7 @@
 }
 
 .rst-Action_Action-dislike {
+  border: 1px solid var(--Color_Red);
   background-color: var(--Color_Red);
 }
 
@@ -260,6 +352,8 @@
 |
 */
 .rst-Carousel {
+  position: relative;
+
   display: flex;
   height: 100%;
 
@@ -280,6 +374,18 @@
 .rst-Carousel_Items {
   display: flex;
   height: 100%;
+
+  .slider-control-centerright,
+  .slider-control-centerleft {
+    top: 0 !important;
+    bottom: 0 !important;
+
+    align-items: center;
+
+    display: flex;
+
+    transform: none !important;
+  }
 }
 
 .rst-Carousel_ImageContainer {
@@ -293,4 +399,68 @@
   height: 100%;
 
   object-fit: cover;
+}
+
+.rst-Carousel_Control {
+  position: relative;
+
+  height: 100%;
+  padding: 0 5px;
+  border: none;
+
+  background-color: transparent;
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    opacity: 0;
+
+    transition: opacity var(--Global_Transition);
+  }
+
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  svg {
+    width: 24px;
+
+    fill: #fff;
+  }
+}
+
+.rst-Carousel_Control-previous {
+  left: 0;
+
+  background: linear-gradient(to left, rgba(0,0,0,0) 20%,rgba(0,0,0,0.20) 100%);
+
+  &::before {
+    background: linear-gradient(to left, rgba(0,0,0,0) 20%,rgba(0,0,0,0.25) 100%);
+  }
+
+  svg {
+    transform: rotate(90deg);
+  }
+}
+
+.rst-Carousel_Control-next {
+  right: 0;
+
+  background: linear-gradient(to right, rgba(0,0,0,0) 20%,rgba(0,0,0,0.20) 100%);
+
+  &::before {
+    background: linear-gradient(to right, rgba(0,0,0,0) 20%,rgba(0,0,0,0.25) 100%);
+  }
+
+  svg {
+    transform: rotate(-90deg);
+  }
 }

@@ -68,4 +68,9 @@
     width: calc(10 / 12 * 100%);
     margin: 0 auto;
   }
+
+  @include lg {
+    width: calc(8 / 12 * 100%);
+    margin: 0 auto;
+  }
 }

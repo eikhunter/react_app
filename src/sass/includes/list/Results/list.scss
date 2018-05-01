@@ -28,8 +28,12 @@
   display: flex;
   margin: 8px 0;
 
-  @include xxlg {
+  @include lg {
     margin: 16px 0;
+  }
+
+  @include xxlg {
+    margin: 32px 0;
   }
 
   &:first-child {

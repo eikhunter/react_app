@@ -10,6 +10,7 @@ import BedIcon from '../../../../../assets/svg/bedroom.svg'
 import BathroomIcon from '../../../../../assets/svg/bathroom.svg'
 import Cross from '../../../../../assets/svg/close.svg'
 import Heart from '../../../../../assets/svg/heart.svg'
+import Arrow from '../../../../../assets/svg/arrow.svg'
 
 const ResultsItem = (props) => {
   return (
@@ -19,7 +20,19 @@ const ResultsItem = (props) => {
           <Carousel
             className="rst-Carousel_Items"
             dragging={false}
-            renderBottomCenterControls={() => {}}>
+            renderBottomCenterControls={() => {}}
+            renderCenterLeftControls={({ previousSlide }) => (
+              <button
+                className="rst-Carousel_Control rst-Carousel_Control-previous" onClick={previousSlide}>
+                <Arrow/>
+              </button>
+            )}
+            renderCenterRightControls={({ nextSlide }) => (
+              <button
+                className="rst-Carousel_Control rst-Carousel_Control-next" onClick={nextSlide}>
+                <Arrow/>
+              </button>
+            )}>
             <div className="rst-Carousel_ImageContainer">
               <img alt="" src={require('../../../../../assets/images/property1/image1.jpg')} alt="property" className="rst-Carousel_Image"/>
             </div>
@@ -46,7 +59,7 @@ const ResultsItem = (props) => {
           <TabPanel className="rst-Tabs_Content rst-Tabs_Content-information">
             <div className="rst-Information">
               <div className="rst-Information_Body">
-                <a className="rst-Information_Title">{props.title}</a>
+                <a href="/" className="rst-Information_Title">{props.title}</a>
                 <p className="rst-Information_Location">{props.location}</p>
                 <ClampLines
                   text={props.description}
@@ -93,10 +106,10 @@ const ResultsItem = (props) => {
           <footer className="rst-Meta_Footer">
             <div className="rst-Action">
               <div className="rst-Action_Actions">
-                <button className="rst-Action_Action rst-Action_Action-dislike">
+                <button onClick={props.remove} className="rst-Action_Action rst-Action_Action-dislike">
                   <Cross/>
                 </button>
-                <button className="rst-Action_Action rst-Action_Action-like">
+                <button onClick={props.add} className="rst-Action_Action rst-Action_Action-like">
                   <Heart/>
                 </button>
               </div>
