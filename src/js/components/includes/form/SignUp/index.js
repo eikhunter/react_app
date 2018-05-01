@@ -42,13 +42,7 @@ class SignUpForm extends React.Component {
 
     instance.post('/register', user)
       .then(res => {
-        let d = new Date
-        d.setDate(d.getDate() + 30)
-
-        let expires = ";expires=" + d
-
-        document.cookie = "perchpeeksession" + "=" + res.data.success.token + expires + ";path=/"
-        this.props.setAuthStatus(true)
+        document.cookie = "perchpeeksession=" + res.data.success.token
       })
       .catch(err => {
         console.log(err, "There was an error")
@@ -106,26 +100,26 @@ class SignUpForm extends React.Component {
             <div className="lgn-Modal_Socials">
               <ul className="lgn-Modal_SocialItems">
                 <li className="lgn-Modal_SocialItem lgn-Modal_SocialItem-facebook">
-                  <a href="#" className="lgn-Modal_SocialLink">
+                  <a href="/" className="lgn-Modal_SocialLink">
                     <FacebookIcon/>
                     Facebook</a>
                 </li>
 
                 <li className="lgn-Modal_SocialItem lgn-Modal_SocialItem-twitter">
-                  <a href="#" className="lgn-Modal_SocialLink">
+                  <a href="/" className="lgn-Modal_SocialLink">
                     <TwitterIcon/>
                     Twitter</a>
                 </li>
 
                 <li className="lgn-Modal_SocialItem lgn-Modal_SocialItem-google">
-                  <a href="#" className="lgn-Modal_SocialLink">
+                  <a href="/" className="lgn-Modal_SocialLink">
                     <GoogleIcon/>
                     Google</a>
                 </li>
               </ul>
             </div>
 
-            <p href="" className="lgn-Modal_Text">Need help?<a href="#" className="lgn-Modal_Link"> Contact us</a></p>
+            <p className="lgn-Modal_Text">Need help?<a href="/" className="lgn-Modal_Link"> Contact us</a></p>
           </footer>
         </form>
       </div>

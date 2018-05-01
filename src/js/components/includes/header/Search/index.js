@@ -1,14 +1,9 @@
 import React from 'react'
 
 import SearchIcon from '../../../../../assets/svg/search.svg'
-import styles from '../../../../../sass/includes/search/Header/search.scss'
+import '../../../../../sass/includes/search/Header/search.scss'
 
 class HeaderSearch extends React.Component {
-  constructor(props) {
-    super(props)
-
-  }
-
   render() {
     return (
       <form className="hd-Search">

@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { NavLink } from "react-router-dom"
 
 import logo from '../../../../../assets/images/logo.png'
-import styles from '../../../../../sass/includes/header/Home/header.scss'
+import '../../../../../sass/includes/header/Home/header.scss'
 
 const HomeHeader = (props) => {
   return (

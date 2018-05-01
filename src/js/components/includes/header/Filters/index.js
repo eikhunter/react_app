@@ -3,7 +3,7 @@ import React from 'react'
 import AllFilter from './AllFilter/index'
 import PriceFilter from './PriceFilter/index'
 import BedsFilter from './BedsFilter/index'
-import styles from '../../../../../sass/includes/header/Filters/header.scss'
+import '../../../../../sass/includes/header/Filters/header.scss'
 
 const HeaderFilters = () => {
   return (

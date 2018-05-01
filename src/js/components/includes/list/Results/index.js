@@ -1,10 +1,9 @@
 import React from 'react'
 import resultsData from '../../../../../results/results.json'
 
-import ResultItem from '../../../includes/item/Results/index'
-
-import styles from '../../../../../sass/includes/list/Results/list.scss'
 import ResultsItem from '../../item/Results/index'
+
+import '../../../../../sass/includes/list/Results/list.scss'
 
 class ResultsLists extends React.Component {
   constructor(props) {

@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 import HeaderSearch from '../../header/Search/index'
 import HeaderFilters from '../../header/Filters/index'
 
 import Simplelogo from '../../../../../assets/images/logo-simple.png'
-import styles from '../../../../../sass/includes/header/Results/header.scss'
+import '../../../../../sass/includes/header/Results/header.scss'
 
 const ResultsHeader = (props) => {
   return (
@@ -31,7 +31,7 @@ const ResultsHeader = (props) => {
           <nav className="rst-Header_Navigation">
             <ul className="rst-Header_Items">
               <li className="rst-Header_Item">
-                <a href="#" className="rst-Header_Link">List your property</a>
+                <NavLink to="/list-property" className="rst-Header_Link">List your property</NavLink>
               </li>
               <li className="rst-Header_Item">
                 <button onClick={props.clicked} className="rst-Header_Link">Sign up / Login</button>

@@ -25,15 +25,19 @@ class App extends Component {
   }
 
   logOut = () => {
-    document.cookie = 'perchpeeksession=' + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    document.cookie = 'perchpeeksession=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
     this.setState({ isLoggedIn: true })
     console.log(this.state.redirect)
   }
 
   render() {
     const { isLoggedIn } = this.state
-    return (
 
+    if (isLoggedIn) {
+      return <Redirect to='/'/>
+    }
+
+    return (
       <div className="lyt-Content">
         <BrowserRouter>
           <div>
@@ -50,10 +54,6 @@ class App extends Component {
           modalClosed={this.closeLoginModalHandler}/>
       </div>
     )
-
-    if (isLoggedIn) {
-      return <Redirect to='/'/>
-    }
   }
 }
 

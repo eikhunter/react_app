@@ -1,5 +1,4 @@
 import React from 'react'
-import { Redirect } from 'react-router'
 import axios from 'axios'
 
 import FacebookIcon from '../../../../../assets/svg/social/facebook.svg'
@@ -37,12 +36,7 @@ class LoginForm extends React.Component {
 
     instance.post('/login', user)
       .then(res => {
-        let d = new Date
-        d.setDate(d.getDate() + 30)
-
-        let expires = ";expires=" + d
-
-        document.cookie = "perchpeeksession" + "=" + res.data.success.token + expires + ";path=/"
+        document.cookie = "perchpeeksession=" + res.data.success.token
         console.log('changing state')
       })
       .catch(err => {
@@ -90,19 +84,19 @@ class LoginForm extends React.Component {
             <div className="lgn-Modal_Socials">
               <ul className="lgn-Modal_SocialItems">
                 <li className="lgn-Modal_SocialItem lgn-Modal_SocialItem-facebook">
-                  <a href="#" className="lgn-Modal_SocialLink">
+                  <a href="/" className="lgn-Modal_SocialLink">
                     <FacebookIcon/>
                     Facebook</a>
                 </li>
 
                 <li className="lgn-Modal_SocialItem lgn-Modal_SocialItem-twitter">
-                  <a href="#" className="lgn-Modal_SocialLink">
+                  <a href="/" className="lgn-Modal_SocialLink">
                     <TwitterIcon/>
                     Twitter</a>
                 </li>
 
                 <li className="lgn-Modal_SocialItem lgn-Modal_SocialItem-google">
-                  <a href="#" className="lgn-Modal_SocialLink">
+                  <a href="/" className="lgn-Modal_SocialLink">
                     <GoogleIcon/>
                     Google</a>
                 </li>

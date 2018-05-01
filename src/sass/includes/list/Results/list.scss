@@ -5,6 +5,8 @@
 | @namespace: rst-
 |
 */
+@import "../../../app";
+
 .rst-List {
   flex-grow: 1;
   flex-direction: column;
@@ -24,7 +26,11 @@
   flex: 1;
 
   display: flex;
-  margin: 16px 0;
+  margin: 8px 0;
+
+  @include xxlg {
+    margin: 16px 0;
+  }
 
   &:first-child {
     margin-top: 0;

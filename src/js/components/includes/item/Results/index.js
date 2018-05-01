@@ -5,7 +5,7 @@ import Carousel from 'nuka-carousel';
 
 import GoogleMap from '../../map/Google/index'
 
-import style from '../../../../../sass/includes/item/Results/item.scss'
+import '../../../../../sass/includes/item/Results/item.scss'
 import BedIcon from '../../../../../assets/svg/bedroom.svg'
 import BathroomIcon from '../../../../../assets/svg/bathroom.svg'
 import Cross from '../../../../../assets/svg/close.svg'
@@ -13,24 +13,20 @@ import Heart from '../../../../../assets/svg/heart.svg'
 
 const ResultsItem = (props) => {
   return (
-    <div className="rst-Item">
+    <div className="rst-Item" key={props.id}>
       <div className="rst-Item_Images">
         <div className="rst-Carousel">
           <Carousel
             className="rst-Carousel_Items"
             dragging={false}
-            renderBottomCenterControls={false}>
-            <li className="rst-Carousel_Item">
-              <div className="rst-Carousel_ImageContainer">
-                <img alt="" src={require('../../../../../assets/images/property1/image1.jpg')} alt="property" className="rst-Carousel_Image"/>
-              </div>
-            </li>
+            renderBottomCenterControls={() => {}}>
+            <div className="rst-Carousel_ImageContainer">
+              <img alt="" src={require('../../../../../assets/images/property1/image1.jpg')} alt="property" className="rst-Carousel_Image"/>
+            </div>
 
-            <li className="rst-Carousel_Item">
-              <div className="rst-Carousel_ImageContainer">
-                <img alt="" src={require('../../../../../assets/images/property1/image2.jpg')} alt="property" className="rst-Carousel_Image"/>
-              </div>
-            </li>
+            <div className="rst-Carousel_ImageContainer">
+              <img alt="" src={require('../../../../../assets/images/property1/image2.jpg')} alt="property" className="rst-Carousel_Image"/>
+            </div>
           </Carousel>
         </div>
       </div>
@@ -54,7 +50,7 @@ const ResultsItem = (props) => {
                 <p className="rst-Information_Location">{props.location}</p>
                 <ClampLines
                   text={props.description}
-                  lines="5"
+                  lines="3"
                   ellipsis="..."
                   buttons={false}
                   className="rst-Information_Text"/>

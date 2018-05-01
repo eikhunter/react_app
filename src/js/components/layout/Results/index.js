@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import ResultsHeader from '../../includes/header/Results/index'
 import ResultsList from '../../includes/list/Results/index'
 import ResultsSideBar from '../../includes/sidebar/Results/index'
 import Footer from '../../includes/footer/Footer/index'
 
-import styles from '../../../../sass/layout/Results/results.scss'
+import '../../../../sass/layout/Results/results.scss'
 
 const Results = (props) => {
   return (

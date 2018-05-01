@@ -4,7 +4,7 @@ import Backdrop from '../../../../components/layout/Backdrop/index'
 import SignUpFormContainer from '../../form/SignUpFormContainer/index'
 
 import CloseIcon from '../../../../../assets/svg/close.svg'
-import styles from '../../../../../sass/includes/modal/Login/modal.scss'
+import '../../../../../sass/includes/modal/Login/modal.scss'
 
 class LoginModal extends React.Component {
   constructor(props) {

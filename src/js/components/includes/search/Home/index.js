@@ -1,7 +1,7 @@
 import React from 'react'
 
 import SearchIcon from '../../../../../assets/svg/search.svg'
-import styles from '../../../../../sass/includes/search/Home/search.scss'
+import '../../../../../sass/includes/search/Home/search.scss'
 
 const HomeSearch = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import classes from '../../../../sass/layout/Backdrop/backdrop.scss'
+import '../../../../sass/layout/Backdrop/backdrop.scss'
 
 const Backdrop = (props) => (
   props.show ? <div onClick={props.clicked}

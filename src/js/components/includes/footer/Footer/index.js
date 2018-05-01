@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from '../../../../../sass/includes/footer/Footer/footer.scss'
+import '../../../../../sass/includes/footer/Footer/footer.scss'
 import LinkedInIcon from '../../../../../assets/svg/social/linkedin-circle.svg'
 import InstagramIcon from '../../../../../assets/svg/social/instagram-circle.svg'
 import TwitterIcon from '../../../../../assets/svg/social/twitter-circle.svg'
@@ -31,22 +31,22 @@ const Footer = () => {
 
           <ul className="ft-Footer_Socials">
             <li className="ft-Footer_Social">
-              <a href="#" className="ft-Footer_SocialLink">
+              <a href="/" className="ft-Footer_SocialLink">
                 <LinkedInIcon/>
               </a>
             </li>
             <li className="ft-Footer_Social">
-              <a href="#" className="ft-Footer_SocialLink">
+              <a href="/" className="ft-Footer_SocialLink">
                 <InstagramIcon/>
               </a>
             </li>
             <li className="ft-Footer_Social">
-              <a href="#" className="ft-Footer_SocialLink">
+              <a href="/" className="ft-Footer_SocialLink">
                 <TwitterIcon/>
               </a>
             </li>
             <li className="ft-Footer_Social">
-              <a href="#" className="ft-Footer_SocialLink">
+              <a href="/" className="ft-Footer_SocialLink">
                 <FacebookIcon/>
               </a>
             </li>

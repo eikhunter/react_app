@@ -1,7 +1,7 @@
 import React from 'react'
 
 import ArrowIcon from '../../../../../../assets/svg/arrow.svg'
-import styles from '../../../../../../sass/includes/header/Filters/Filter/filter.scss'
+import '../../../../../../sass/includes/header/Filters/Filter/filter.scss'
 
 const AllFilter = () => {
   return (

@@ -13,12 +13,13 @@
 
   background-color: #fff;
   box-shadow: var(--Box_Shadow-light);
-
   border-radius: var(--Global_Radius);
+
+  overflow: hidden;
 }
 
 .rst-Item_Images {
-  width: calc(2.5 / 7 * 100%);
+  width: calc(2 / 7 * 100%);
 }
 
 .rst-Item_Body {
@@ -33,7 +34,7 @@
   flex: 1;
 
   display: flex;
-  width: calc(1 / 7 * 100%);
+  width: calc(1.5 / 7 * 100%);
 }
 
 /*
@@ -48,7 +49,7 @@
   flex-direction: column;
 
   display: flex;
-  padding: 30px 36px 34px;
+  padding: 20px;
 }
 
 .rst-Information_Title {
@@ -171,7 +172,7 @@
 
 .rst-Meta_Body {
   width: 100%;
-  padding: 35px 20px 20px;
+  padding: 20px var(--Grid_Gutter);
 }
 
 .rst-Meta_ImageContainer {
@@ -192,13 +193,15 @@
 }
 
 .rst-Meta_Name {
-  margin-top: 30px;
+  margin-top: 20px;
+
+  font-size: 14px;
 }
 
 .rst-Meta_Footer {
   width: 100%;
   margin-top: auto;
-  padding: 10px 20px 35px;
+  padding: 10px var(--Grid_Gutter);
 
   border-top: 1px solid var(--Color_Border);
 }
@@ -214,7 +217,7 @@
   justify-content: center;
 
   display: flex;
-  margin: 20px -8px;
+  margin: 10px -8px;
 }
 
 .rst-Action_Action {
@@ -222,15 +225,15 @@
   align-items: center;
 
   display: flex;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   margin: 0 8px;
 
   border-radius: 25px;
   border: none;
 
   svg {
-    width: 24px;
+    width: 18px;
     fill: #fff;
   }
 }
@@ -239,8 +242,8 @@
   background-color: var(--Color_Brand-green);
 
   svg {
-    width: 28px;
     margin-top: 2px;
+    width: 24px;
     fill: #fff;
   }
 }
@@ -279,7 +282,7 @@
   height: 100%;
 }
 
-.rst-Carousel_Item {
+.rst-Carousel_ImageContainer {
   display: flex;
   height: 100%;
 }
