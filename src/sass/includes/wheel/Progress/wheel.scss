@@ -1,0 +1,84 @@
+/*
+|--------------------------------------------------------------------------
+| Wheel
+|--------------------------------------------------------------------------
+| @namespace: prg-
+|
+*/
+@import "../../../app";
+
+.progress {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+.progress-pie-chart {
+  justify-content: center;
+  align-items: center;
+
+  display: flex;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #E5E5E5;
+  position: relative;
+}
+.progress-pie-chart.gt-50 {
+  background-color: var(--Color_Brand-green);
+}
+
+.ppc-progress {
+  position: absolute;
+  border-radius: 50%;
+  left: calc(50% - 50px);
+  top: calc(50% - 50px);
+  align-items: center;
+
+  display: flex;
+  width: 100px;
+  height: 100px;
+  clip: rect(0, 100px, 100px, 50px);
+}
+.ppc-progress .ppc-progress-fill {
+  position: absolute;
+  border-radius: 50%;
+  left: calc(50% - 50px);
+  top: calc(50% - 50px);
+  width: 100px;
+  height: 100px;
+  clip: rect(0, 50px, 100px, 0);
+  background: #1ECD97;
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+.gt-50 .ppc-progress {
+  clip: rect(0, 50px, 100px, 0);
+}
+.gt-50 .ppc-progress .ppc-progress-fill {
+  clip: rect(0, 100px, 100px, 50px);
+  background: #E5E5E5;
+}
+
+.ppc-percents {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  text-align: center;
+  display: table;
+}
+.ppc-percents span {
+  display: block;
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--Color_Brand-green);
+}
+
+.pcc-percents-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}

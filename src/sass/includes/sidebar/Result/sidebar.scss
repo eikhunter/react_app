@@ -33,6 +33,12 @@
 
   border-bottom: 1px solid var(--Color_Border);
 
+  .react-tabs__tab--selected {
+    background-color: var(--Color_Brand-green);
+
+    color: #fff;
+  }
+
   .react-tabs__tab--selected:last-child {
     background-color: var(--Color_Red);
 
@@ -54,6 +60,12 @@
 
   cursor: pointer;
   transition: background-color var(--Global_Transition), color var(--Global_Transition);
+
+  &:hover {
+    background-color: var(--Color_Brand-green);
+
+    color: #fff;
+  }
 
   &:last-child {
     &:hover {
