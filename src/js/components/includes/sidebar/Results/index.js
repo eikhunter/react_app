@@ -42,7 +42,7 @@ const ResultsSideBar = (props) => {
       <TabPanel className="rst-SideBar_TabContent rst-SideBar_TabContent-favourites">
         <div className="fvt-List">
           <ul className="fvt-List_Items">
-            {props.favourites.length ? {favourites} : <div>You have no favourites. </div>}
+            {props.favourites.length ? favourites : <div>You have no favourites. </div>}
           </ul>
         </div>
       </TabPanel>
