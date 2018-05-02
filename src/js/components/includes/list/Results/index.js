@@ -5,7 +5,8 @@ import ResultsItem from '../../item/Results/index'
 import '../../../../../sass/includes/list/Results/list.scss'
 
 const ResultsLists = (props) => {
-  const results = props.data.results.map((result, index) =>
+  let results = (
+    props.data.map((result, index) =>
     <li className="rst-List_Item">
       <ResultsItem
         key={result.id}
@@ -17,10 +18,10 @@ const ResultsLists = (props) => {
         landlord={result.landlord}
         lat={result.lat}
         lng={result.lng}
-        add={props.add(index)}
-        remove={props.remove(index)}/>
+        add={() => props.add(index)}
+        remove={() => props.remove(index)}/>
     </li>
-  )
+  ))
 
   return (
     <div className="rst-List">

@@ -13,17 +13,25 @@ class Results extends React.Component{
     super(props)
 
     this.state = {
-      results: resultsData,
+      results: resultsData.results,
       favourites: [],
       archived: [],
     }
   }
 
   addPropertyHandler = (propertyIndex) => {
-    const results = this.state.results
-    results.results.splice(propertyIndex, 1)
-    this.setState({results: results})
-    console.log(results)
+    const newData = resultsData.newResult
+    const newResults = this.state.results
+
+    const splicedResult = newResults.splice(propertyIndex, 1)
+
+    this.setState({ results: newResults.concat(newData) })
+
+    console.log(this.state.results)
+
+    this.setState({favourites: splicedResult}, function () {
+      console.log(this.state.favourites);
+    });
   }
 
   removePropertyHandler = () => {

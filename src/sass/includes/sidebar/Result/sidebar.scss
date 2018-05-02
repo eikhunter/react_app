@@ -26,14 +26,18 @@
 .rst-SideBar_Tabs {
   display: flex;
   width: 100%;
-
-  background-color: var(--Color_Red);
 }
 
 .rst-SideBar_Tabs {
   display: flex;
 
   border-bottom: 1px solid var(--Color_Border);
+
+  .react-tabs__tab--selected:last-child {
+    background-color: var(--Color_Red);
+
+    color: #fff;
+  }
 }
 
 .rst-SideBar_Tab {
@@ -52,9 +56,11 @@
   transition: background-color var(--Global_Transition), color var(--Global_Transition);
 
   &:last-child {
-    background-color: transparent;
+    &:hover {
+      background-color: var(--Color_Red);
 
-    color: #fff;
+      color: #fff;
+    }
   }
 }
 

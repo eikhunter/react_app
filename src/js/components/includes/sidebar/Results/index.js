@@ -6,7 +6,7 @@ import PropertyCard from '../../card/Property/index'
 import '../../../../../sass/includes/sidebar/Result/sidebar.scss'
 
 const ResultsSideBar = (props) => {
-  const favourites = props.favourites.map((result) =>
+  const favourites = props.favourites.map((result, index) => (
     <li className="fvt-List_Item">
       <PropertyCard
         key={result.id}
@@ -15,9 +15,9 @@ const ResultsSideBar = (props) => {
         beds={result.beds}
         bathrooms={result.bathrooms}/>
     </li>
-  )
+  ))
 
-  const archived = props.archived.map((result) =>
+  const archived = props.archived.map((result, index) => (
     <li className="fvt-List_Item">
       <PropertyCard
         key={result.id}
@@ -26,13 +26,13 @@ const ResultsSideBar = (props) => {
         beds={result.beds}
         bathrooms={result.bathrooms}/>
     </li>
-  )
+  ))
 
   return (
     <Tabs className="rst-SideBar">
       <TabList className="rst-SideBar_Tabs">
         <Tab className="rst-SideBar_Tab">
-          <p className="rst-SideBar_Text">0 Favourites</p>
+          <p className="rst-SideBar_Text">{archived.length} Favourites</p>
         </Tab>
         <Tab className="rst-SideBar_Tab">
           <p className="rst-SideBar_Text">Archived</p>
