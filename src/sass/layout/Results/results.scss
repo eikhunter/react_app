@@ -17,15 +17,11 @@
 
 .lyt-Results_Body {
   display: flex;
-  min-height: calc(100vh - 237px);
+  min-height: calc(100vh - 173px);
   margin: 16px -16px;
 
   @include lg {
     margin: 32px -16px;
-  }
-
-  @include xlg {
-    margin: 64px -32px;
   }
 }
 
@@ -34,12 +30,12 @@
 
   display: flex;
 
-  width: calc(9 / 12 * 100% - var(--Grid_Gutter) * 4);
-  margin: 0 calc(var(--Grid_Gutter) * 2);
+  width: calc(7 / 10 * 100% - var(--Grid_Gutter) * 2);
+  margin: 0 var(--Grid_Gutter);
 }
 
 .lyt-Results_Aside {
   display: flex;
-  width: calc(3 / 12 * 100% - var(--Grid_Gutter) * 4);
-  margin: 0 calc(var(--Grid_Gutter) * 2);
+  width: calc(3 / 10 * 100% - var(--Grid_Gutter) * 2);
+  margin: 0 var(--Grid_Gutter)
 }

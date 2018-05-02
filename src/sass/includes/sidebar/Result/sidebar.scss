@@ -23,6 +23,12 @@
 |--------------------------------------------------------------------------
 |
 */
+.rst-SideBar {
+  .react-tabs__tab-panel--selected {
+    display: block;
+  }
+}
+
 .rst-SideBar_Tabs {
   display: flex;
   width: 100%;
@@ -76,9 +82,24 @@
   }
 }
 
-.rst-SideBar_Content {
-  flex-grow: 1;
-
+.rst-SideBar_TabContent {
   display: none;
+
   width: 100%;
+  padding: 18px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Side List
+|--------------------------------------------------------------------------
+| @namespace: rst-
+|
+*/
+.rst-SideList_Item {
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }

@@ -1,0 +1,53 @@
+/*
+|--------------------------------------------------------------------------
+| Card
+|--------------------------------------------------------------------------
+| @namespace: prp
+|
+*/
+.prp-Card {
+  display: flex;
+
+  border-radius: var(--Global_Radius);
+  box-shadow: var(--Box_Shadow-light);
+
+  overflow: hidden;
+}
+
+.prp-Card_ImageContainer {
+  position: relative;
+
+  flex-shrink: 0;
+
+  max-width: 120px;
+  width: 100%;
+}
+
+.prp-Card_Image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.prp-Card_Content {
+  padding: 20px;
+}
+
+.prp-Card_Title {
+  margin-bottom: 8px;
+}
+
+.prp-Card_Text {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+

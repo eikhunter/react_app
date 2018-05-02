@@ -2,6 +2,7 @@ import React from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import ClampLines from 'react-clamp-lines';
 import Carousel from 'nuka-carousel';
+import { Link } from "react-router-dom"
 
 import GoogleMap from '../../map/Google/index'
 
@@ -14,7 +15,8 @@ import Arrow from '../../../../../assets/svg/arrow.svg'
 
 const ResultsItem = (props) => {
   return (
-    <div className="rst-Item" key={props.id}>
+    <div className="rst-Item"
+         key={props.id}>
       <div className="rst-Item_Images">
         <div className="rst-Carousel">
           <Carousel
@@ -59,7 +61,7 @@ const ResultsItem = (props) => {
           <TabPanel className="rst-Tabs_Content rst-Tabs_Content-information">
             <div className="rst-Information">
               <div className="rst-Information_Body">
-                <a href="/" className="rst-Information_Title">{props.title}</a>
+                <Link to={'/results/'+props.id} className="rst-Information_Title">{props.title}</Link>
                 <p className="rst-Information_Location">{props.location}</p>
                 <ClampLines
                   text={props.description}
@@ -73,15 +75,15 @@ const ResultsItem = (props) => {
                 <div className="rst-Information_Key rst-Information_Key-beds">
                   <p className="rst-Information_KeyText">{props.beds}</p>
                   <span className="rst-Information_Icon">
-                      <BedIcon/>
-                    </span>
+                    <BedIcon/>
+                  </span>
                 </div>
 
                 <div className="rst-Information_Key rst-Information_Key-bathrooms">
                   <p className="rst-Information_KeyText">{props.bathrooms}</p>
                   <span className="rst-Information_Icon rst-Information_Icon-bathroom">
-                      <BathroomIcon/>
-                    </span>
+                    <BathroomIcon/>
+                  </span>
                 </div>
               </div>
             </div>
@@ -115,7 +117,7 @@ const ResultsItem = (props) => {
               </div>
             </div>
 
-            <a href="" className="rst-Meta_Link">View property</a>
+            <Link to={`/results/${props.id}`} className="rst-Meta_Link">View property</Link>
           </footer>
         </div>
       </div>

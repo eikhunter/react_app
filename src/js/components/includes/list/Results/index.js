@@ -7,9 +7,9 @@ import '../../../../../sass/includes/list/Results/list.scss'
 const ResultsLists = (props) => {
   let results = (
     props.data.map((result, index) =>
-    <li className="rst-List_Item">
+    <li className="rst-List_Item" key={result.id}>
       <ResultsItem
-        key={result.id}
+        id={result.id}
         title={result.title}
         location={result.location}
         description={result.description}

@@ -1,0 +1,332 @@
+/*
+|--------------------------------------------------------------------------
+| Property
+|--------------------------------------------------------------------------
+| @namespace: lyt-
+|
+*/
+@import "../../app";
+
+.lyt-Property_ImageContainer {
+  width: 100%;
+  height: 800px;
+
+  overflow: hidden;
+}
+
+.lyt-Property_Image {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.lyt-Property_Inner {
+  @include Grid_Container;
+}
+
+.lyt-Property_Container {
+  width: calc(8 / 10 * 100%);
+  margin: 0 auto;
+}
+
+.lyt-Property_Body {
+  justify-content: space-between;
+
+  display: flex;
+  margin: 16px -16px;
+
+  @include lg {
+    margin: 40px -16px;
+  }
+}
+
+.lyt-Property_Main {
+  display: flex;
+
+  width: calc(7 / 10 * 100% - var(--Grid_Gutter) * 4);
+  margin: 0 calc(var(--Grid_Gutter) * 2);
+}
+
+.lyt-Property_Aside {
+  width: calc(3 / 10 * 100% - var(--Grid_Gutter) * 4);
+  margin: -140px calc(var(--Grid_Gutter) * 2) 0;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Detail
+|--------------------------------------------------------------------------
+| @namespace: prp-
+|
+*/
+.asi-Detail {
+  padding: 20px 24px 40px;
+
+  background-color: #fff;
+  border-radius: var(--Global_Radius);
+
+  box-shadow: var(--Box_Shadow-light);
+}
+
+.asi-Detail_Header {
+  align-items: center;
+
+  display: flex;
+  width: 100%;
+}
+
+.asi-Detail_ImageContainer {
+  width: 60px;
+  height: 60px;
+  margin-right: var(--Grid_Gutter);
+
+  overflow: hidden;
+
+  border-radius: 50px;
+}
+
+.asi-Detail_Image {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--Color_Body);
+}
+
+.asi-Detail_Icon {
+  justify-content: center;
+  align-items: center;
+
+  display: flex;
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+  padding: 5px;
+
+  border-radius: 60px;
+
+  background-color: var(--Color_Brand-blue);
+
+  svg {
+    display: block;
+    width: 20px;
+
+    fill: #fff;
+  }
+}
+
+.asi-Detail_Body {
+  margin-top: 35px;
+}
+
+.asi-Detail_Item {
+  align-items: center;
+  justify-content: center;
+
+  display: flex;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+
+  border-bottom: 1px solid rgba(000, 000, 000, 0.2);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.asi-Detail_Key {
+  flex: 1;
+  line-height: 24px;
+  text-align: left;
+}
+
+.asi-Detail_Key-detail {
+  font-weight: 600;
+  text-align: right;
+}
+
+.asi-Detail_Footer {
+  justify-content: space-between;
+  align-items: center;
+
+  display: flex;
+  margin-top: 30px;
+}
+
+.asi-Detail_Actions {
+  justify-content: center;
+
+  display: flex;
+  margin: 0 -8px 10px;
+}
+
+.asi-Detail_Action {
+  justify-content: center;
+  align-items: center;
+
+  display: flex;
+  width: 40px;
+  height: 40px;
+  margin: 0 8px;
+
+  border-radius: 25px;
+
+  transition: background-color var(--Global_Transition);
+
+  &:hover {
+    background-color: transparent;
+
+    svg {
+      fill: var(--Color_Red);
+    }
+  }
+
+  svg {
+    width: 18px;
+    fill: #fff;
+    transition: fill var(--Global_Transition);
+  }
+}
+
+.asi-Detail_Action-like {
+  border: 1px solid var(--Color_Brand-green);
+  background-color: var(--Color_Brand-green);
+
+  &:hover {
+    background-color: transparent;
+
+    svg {
+      fill: var(--Color_Brand-green);
+    }
+  }
+
+  svg {
+    margin-top: 2px;
+    width: 24px;
+    fill: #fff;
+  }
+}
+
+.asi-Detail_Action-dislike {
+  border: 1px solid var(--Color_Red);
+  background-color: var(--Color_Red);
+}
+
+.asi-Detail_Link {
+  @include Button-primary;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Detail
+|--------------------------------------------------------------------------
+| @namespace: prp-
+|
+*/
+.prp-Detail {
+  width: 100%;
+}
+
+.prp-Detail_Header {
+  width: 100%;
+}
+
+.prp-Detail_Available {
+  @include Font_12-18;
+
+  margin-bottom: 10px;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.prp-Detail_Title {
+  @include Font_26-34;
+
+  margin-bottom: 10px;
+}
+
+.prp-Detail_Location {
+  @include Font_16-24;
+
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.prp-Detail_Keys {
+  align-items: center;
+  display: flex;
+  margin: 20px -40px 0;
+}
+
+.prp-Detail_Key {
+  align-items: center;
+
+  display: inline-flex;
+  margin: 0 40px;
+}
+
+.prp-Detail_KeyText {
+  margin-right: calc(var(--Grid_Gutter) * 2);
+
+  font-size: 18px;
+  line-height: 24px;
+
+  @include xlg {
+    margin-right: calc(var(--Grid_Gutter) * 3);
+
+    font-size: 22px;
+    line-height: 28px;
+  }
+}
+
+.prp-Detail_Icon {
+  svg {
+    height: 26px;
+    fill: var(--Color_Brand-blue);
+
+    @include xlg {
+      height: 40px;
+    }
+  }
+}
+
+.prp-Detail_Links {
+  justify-content: space-between;
+  align-items: center;
+
+  display: flex;
+  margin-top: 30px;
+}
+
+.prp-Detail_Link {
+  @include Button-primary;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Detail
+|--------------------------------------------------------------------------
+| @namespace: tbs-
+|
+*/
+.tbs-Detail_Tabs {
+  display: flex;
+  margin-top: 30px;
+
+  border-top: 1px solid rgba(000, 000, 000, 0.2);
+}
+
+.tbs-Detail_Tab {
+  margin-right: calc(var(--Grid_Gutter) * 3);
+  padding: 20px 0;
+
+  font-size: 14px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
