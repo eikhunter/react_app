@@ -165,7 +165,7 @@
 
 .rst-Tabs_Tab {
   width: calc(1 / 2 * 100%);
-  padding: 14px var(--Grid_Gutter);
+  padding: 8px var(--Grid_Gutter);
 
   border: none;
   background-color: #fff;
@@ -185,6 +185,8 @@
 }
 
 .rst-Tabs_Content {
+  position: relative;
+
   flex-grow: 1;
 
   display: none;
@@ -379,6 +381,7 @@
   .slider-control-centerleft {
     top: 0 !important;
     bottom: 0 !important;
+    z-index: 2;
 
     align-items: center;
 
@@ -388,7 +391,18 @@
   }
 }
 
+.rst-Carousel_ClickableArea {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 .rst-Carousel_ImageContainer {
+  position: relative;
+
   display: flex;
   height: 100%;
 }

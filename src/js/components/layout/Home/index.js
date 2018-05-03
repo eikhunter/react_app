@@ -17,7 +17,7 @@ const Home = (props) => {
             (document.cookie && props.isLoggedIn ? (<button onClick={this.logOut}>Logout</button>
             ): <HomeHeader clicked={props.clicked}/>)
           }
-          <HomeSearch/>
+          <HomeSearch updateProgress={props.updateProgress}/>
         </div>
       </div>
 

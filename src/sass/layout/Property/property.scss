@@ -27,7 +27,7 @@
 }
 
 .lyt-Property_Container {
-  width: calc(8 / 10 * 100%);
+  width: calc(6 / 10 * 100%);
   margin: 0 auto;
 }
 
@@ -38,20 +38,20 @@
   margin: 16px -16px;
 
   @include lg {
-    margin: 40px -16px;
+    margin: 40px -16px 120px;
   }
 }
 
 .lyt-Property_Main {
   display: flex;
 
-  width: calc(7 / 10 * 100% - var(--Grid_Gutter) * 4);
-  margin: 0 calc(var(--Grid_Gutter) * 2);
+  width: calc(6.5 / 10 * 100% - var(--Grid_Gutter) * 4);
+  margin: 0 var(--Grid_Gutter);
 }
 
 .lyt-Property_Aside {
-  width: calc(3 / 10 * 100% - var(--Grid_Gutter) * 4);
-  margin: -140px calc(var(--Grid_Gutter) * 2) 0;
+  width: calc(3.5 / 10 * 100% - var(--Grid_Gutter) * 2);
+  margin: -140px var(--Grid_Gutter) 0;
 }
 
 /*
@@ -315,18 +315,159 @@
 */
 .tbs-Detail_Tabs {
   display: flex;
-  margin-top: 30px;
+  margin: 30px 0;
 
-  border-top: 1px solid rgba(000, 000, 000, 0.2);
+  border-top: 2px solid rgba(000, 000, 000, 0.2);
+
+  .react-tabs__tab--selected {
+    color: var(--Color_Brand-blue);
+
+    &::before {
+      opacity: 1;
+    }
+  }
 }
 
 .tbs-Detail_Tab {
+  position: relative;
+
   margin-right: calc(var(--Grid_Gutter) * 3);
   padding: 20px 0;
 
   font-size: 14px;
+  cursor: pointer;
+
+  transition: color var(--Global_Transition);
+
+  &:hover {
+    color: var(--Color_Brand-blue);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    top: -2px;
+    right: 0;
+    left: 0;
+
+    height: 2px;
+
+    background-color: var(--Color_Brand-blue);
+
+    opacity: 0;
+    transition: opacity var(--Global_Transition);
+  }
 
   &:last-child {
     margin-right: 0;
+  }
+}
+
+.tbs-Detail_Content {
+  position: relative;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Detail
+|--------------------------------------------------------------------------
+| @namespace: prp-
+|
+*/
+.prp-Details_Block {
+  margin-top: 40px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.prp-Details_Title {
+  @include Font_18-28;
+
+  margin-bottom: 20px;
+}
+
+.prp-Details_Item {
+  justify-content: space-between;
+  align-items: center;
+
+  display: flex;
+  margin-top: 20px;
+
+  line-height: 20px;
+
+  .prp-Details_Text {
+    flex: 1;
+  }
+}
+
+.prp-Details_Text-bold {
+  font-weight: 600;
+}
+
+.prp-Details_Features {
+  flex-wrap: wrap;
+  align-items: center;
+
+  display: flex;
+  margin: 0 -16px;
+}
+
+.prp-Details_Feature {
+  position: relative;
+
+  width: calc(1 / 2 * 100% - var(--Grid_Gutter) * 2);
+  margin: 20px var(--Grid_Gutter) 0;
+  padding-left: 20px;
+
+  line-height: 20px;
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    top: 5px;
+    left: 0;
+
+    width: 5px;
+    height: 5px;
+
+    background-color: var(--Color_Brand-blue);
+
+    border-radius: 10px;
+  }
+
+  &:nth-child(-n + 2) {
+    margin-top: 0;
+  }
+}
+
+.prp-Details_Map {
+  position: relative;
+
+  height: 400px;
+}
+
+.prp-Details_KeyLocation {
+  align-items: center;
+
+  display: flex;
+  margin-top: 10px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  svg {
+    display: block;
+    width: 18px;
+    margin-right: var(--Grid_Gutter);
+    fill: var(--Color_Brand-blue);
   }
 }

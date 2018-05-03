@@ -19,8 +19,8 @@
   --Color_Border: #d1d5d8;
   --Color_GreyBackground: #f8f8f8;
 
-  --Color_Gradient: linear-gradient( 90deg, rgb(16,130,252) 22%, rgb(62,216,67) 83%);
-  --Color_Gradient-opposite: linear-gradient( 90deg, rgb(62,216,67) 83%, rgb(16,130,252) 22%);
+  --Color_Gradient: linear-gradient( 90deg, #3394fc 22%, rgb(62,216,67) 83%);
+  --Color_Gradient-opposite: linear-gradient( 90deg, rgb(62,216,67) 83%, #3394fc 22%);
 
   /*
   |--------------------------------------------------------------------------
@@ -41,7 +41,7 @@
   |
   */
   --Grid_Constrained: 1600px;
-  --Grid_Container: 1500px;
+  --Grid_Container: 1600px;
   --Grid_Gutter: 16px;
 
   /*

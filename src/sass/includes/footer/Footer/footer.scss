@@ -11,10 +11,7 @@
   padding: 6px 0;
 
   background-color: #fff;
-
-  @include sm {
-    border-top: none;
-  }
+  border-top: 1px solid var(--Color_Border);
 }
 
 .ft-Footer_Inner {

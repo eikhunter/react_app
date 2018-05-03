@@ -17,7 +17,7 @@ class App extends Component {
       loginClicked: false,
       cookieToken: document.cookie,
       isLoggedIn: false,
-      progressPercent: 3,
+      progressPercent: 0,
       results: resultsData.results
     }
   }

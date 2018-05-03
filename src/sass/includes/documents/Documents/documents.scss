@@ -1,0 +1,135 @@
+/*
+|--------------------------------------------------------------------------
+| Documents
+|--------------------------------------------------------------------------
+| @namespace: dcm-
+|
+*/
+@import "../../../app";
+
+.dcm-Documents_Header {
+  display: flex;
+  margin: 0 -8px 35px;
+}
+
+.dcm-Documents_Key-name {
+  width: calc(4 / 10 * 100% - var(--Grid_Gutter));
+  margin: 0 calc(var(--Grid_Gutter) / 2);
+
+  .dcm-Document_Icon {
+    svg {
+      width: 30px;
+    }
+  }
+}
+
+.dcm-Documents_Key-type {
+  width: calc(4 / 10 * 100% - var(--Grid_Gutter));
+  margin: 0 calc(var(--Grid_Gutter) / 2);
+}
+
+.dcm-Documents_Key-size {
+  width: calc(2 / 10 * 100% - var(--Grid_Gutter));
+  margin: 0 calc(var(--Grid_Gutter) / 2);
+}
+
+.dcm-Documents_Key-download {
+  @include Font_10-18;
+
+  align-items: center;
+
+  display: flex;
+  margin: 0 8px;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  color: #fff;
+
+  svg {
+    width: 12px;
+    margin-left: 10px;
+    margin-bottom: 2px;
+    fill: #fff;
+  }
+}
+
+.dcm-Document_Title {
+  @include Font_14-20;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.dcm-Documents_Item {
+  margin-top: 30px;
+
+  padding-bottom: 30px;
+
+  border-bottom: 1px solid rgba(000, 000, 000, 0.2);
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Document
+|--------------------------------------------------------------------------
+| @namespace: dcm-
+|
+*/
+.dcm-Document {
+  align-items: center;
+
+  display: flex;
+  margin: 0 -8px;
+
+  p {
+    font-size: 14px;
+  }
+}
+
+.dcm-Document_Name {
+  align-items: center;
+
+  display: flex;
+  width: calc(4 / 10 * 100% - var(--Grid_Gutter));
+  margin: 0 calc(var(--Grid_Gutter) / 2);
+
+  .dcm-Document_Icon {
+    svg {
+      width: 30px;
+    }
+  }
+}
+
+.dcm-Document_Type {
+  width: calc(4 / 10 * 100% - var(--Grid_Gutter));
+  margin: 0 calc(var(--Grid_Gutter) / 2);
+}
+
+.dcm-Document_Size {
+  width: calc(2 / 10 * 100% - var(--Grid_Gutter));
+  margin: 0 calc(var(--Grid_Gutter) / 2);
+}
+
+.dcm-Document_Link {
+  @include Font_10-18;
+
+  align-items: center;
+
+  display: flex;
+  margin: 0 8px;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  svg {
+    width: 12px;
+    margin-left: 10px;
+    margin-bottom: 2px;
+    fill: var(--Color_Brand-blue);
+  }
+}

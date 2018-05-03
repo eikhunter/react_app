@@ -37,10 +37,12 @@ const ResultsItem = (props) => {
             )}>
             <div className="rst-Carousel_ImageContainer">
               <img alt="" src={require('../../../../../assets/images/property1/image1.jpg')} alt="property" className="rst-Carousel_Image"/>
+              <div className="rst-Carousel_ClickableArea" onClick={props.show}></div>
             </div>
 
             <div className="rst-Carousel_ImageContainer">
               <img alt="" src={require('../../../../../assets/images/property1/image2.jpg')} alt="property" className="rst-Carousel_Image"/>
+              <div className="rst-Carousel_ClickableArea" onClick={props.show}></div>
             </div>
           </Carousel>
         </div>

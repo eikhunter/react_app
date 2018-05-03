@@ -1,12 +1,16 @@
 import React from 'react'
 import resultsData from '../../../../results/results.json'
+import Carousel from 'nuka-carousel';
 
+import Backdrop from '../Backdrop/index'
 import ResultsHeader from '../../includes/header/Results/index'
 import ResultsList from '../../includes/list/Results/index'
 import ResultsSideBar from '../../includes/sidebar/Results/index'
 import Footer from '../../includes/footer/Footer/index'
 
 import '../../../../sass/layout/Results/results.scss'
+import CloseIcon from '../../../../assets/svg/close.svg'
+import Arrow from '../../../../assets/svg/arrow.svg'
 
 class Results extends React.Component {
   constructor(props) {
@@ -16,6 +20,7 @@ class Results extends React.Component {
       results: resultsData.results,
       favourites: [],
       archived: [],
+      showModal: false,
     }
   }
 
@@ -47,6 +52,15 @@ class Results extends React.Component {
     )
   }
 
+  modalOpenHandler = () => {
+    this.setState({ showModal: true })
+    console.log('clicked')
+  }
+
+  modalCloseHandler = () => {
+    this.setState({ showModal: false })
+  }
+
   render() {
     return (
       <div className="lyt-Results">
@@ -58,7 +72,8 @@ class Results extends React.Component {
               <ResultsList
                 data={this.state.results}
                 add={this.addPropertyHandler}
-                remove={this.removePropertyHandler}/>
+                remove={this.removePropertyHandler}
+                show={this.modalOpenHandler}/>
             </main>
 
             <aside className="lyt-Results_Aside">
@@ -72,6 +87,51 @@ class Results extends React.Component {
         </div>
         <Footer/>
 
+        <div className="lyt-Results_Modal" style={{
+          display: this.state.showModal ? 'flex' : 'none'
+        }}>
+          <Backdrop
+            show={this.state.showModal}
+            clicked={this.modalCloseHandler}/>
+
+          <button className="lyt-Results_Close"
+                  onClick={this.modalCloseHandler}>
+            <CloseIcon/>
+          </button>
+
+          <div className="lyt-Results_Inner">
+            <div className="lyt-Results_ModalContent">
+              <div className="lyt-Results_Modal" style={{
+                opacity: this.state.showModal ? '1' : '0'
+              }}>
+                <Carousel
+                  className="rst-Carousel_Items"
+                  dragging={false}
+                  renderBottomCenterControls={() => {}}
+                  renderCenterLeftControls={({ previousSlide }) => (
+                    <button
+                      className="rst-Carousel_Control rst-Carousel_Control-previous" onClick={previousSlide}>
+                      <Arrow/>
+                    </button>
+                  )}
+                  renderCenterRightControls={({ nextSlide }) => (
+                    <button
+                      className="rst-Carousel_Control rst-Carousel_Control-next" onClick={nextSlide}>
+                      <Arrow/>
+                    </button>
+                  )}>
+                  <div className="rst-Carousel_ImageContainer">
+                    <img alt="" src={require('../../../../assets/images/property1/image1.jpg')} alt="property" className="rst-Carousel_Image"/>
+                  </div>
+
+                  <div className="rst-Carousel_ImageContainer">
+                    <img alt="" src={require('../../../../assets/images/property1/image2.jpg')} alt="property" className="rst-Carousel_Image"/>
+                  </div>
+                </Carousel>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }

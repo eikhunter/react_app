@@ -40,6 +40,8 @@
 }
 
 .hm-Search_Container {
+  position: relative;
+
   display: flex;
   border-radius: 23px;
 
@@ -66,11 +68,36 @@
 
   display: flex;
   width: 42px;
+  height: 48px;
   padding: 14px;
 
   background-color: #fff;
   border-radius: 0 23px 23px 0;
   border-color: transparent;
   border-left: none;
+
+  svg {
+    width: 20px;
+  }
 }
 
+.hm-Search_Dropdown {
+  position: absolute;
+  top: 48px;
+  left: 20px;
+  right: 20px;
+  z-index: -1;
+
+  text-align: left;
+
+  border-radius: 0 0 5px 5px;
+  background-color: #fff;
+
+  overflow: hidden;
+  box-shadow: var(--Box_Shadow-light);
+
+  span {
+    display: block;
+    padding: 6px var(--Grid_Gutter);
+  }
+}
